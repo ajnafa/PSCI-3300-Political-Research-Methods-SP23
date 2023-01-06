@@ -12,9 +12,9 @@ political science research methods and causal inference course at the
 University of North Texas. The class is taught from a primarily Bayesian
 perspective using R, [Stan](https://mc-stan.org/), and
 [`{brms}`](https://github.com/paul-buerkner/brms) and focuses heavily on
-reproducibility and application rather than math for math’s sake. This
-repository will be updated throughout the Spring 2023 semester with
-lecture materials for the course.
+reproducibility and application. This repository will be updated
+throughout the Spring 2023 semester with lecture materials for the
+course.
 
 To download the current version of the course content, you can execute
 the following command from a desktop terminal
