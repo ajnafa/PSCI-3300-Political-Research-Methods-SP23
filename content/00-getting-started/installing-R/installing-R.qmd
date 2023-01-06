@@ -1,0 +1,410 @@
+---
+title: "Installing and Configuring R and RStudio"
+date: '`r format(Sys.time(), "%A, %B %d %Y")`'
+author: "A. Jordan Nafa"
+format: 
+  html:
+    theme: "../../../assets/css/lux-modified.scss"
+    highlight-style: monokai
+    self-contained: true
+    citations-hover: true
+    code-link: true
+    code-block-bg: "#272822"
+    toc-location: left
+bibliography: "../../../assets/references.bib"
+csl: "../../../assets/apsa.csl"
+link-citations: yes
+page-layout: full
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  eval = FALSE,
+  comment = ' ',
+  fig.path = 'figs/',
+  fig.align = "center",
+  fig.process = function(x) {
+    x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+    if (file.rename(x, x2))
+      x2
+    else
+      x
+  }
+)
+```
+
+::: callout-important
+If you have a [Chromebook](https://en.wikipedia.org/wiki/Chromebook) rather 
+than a Windows or Mac computer, these installation instructions will not work. 
+While there are ways to install R, RStudio, and other software on Chromebooks 
+the process for doing so is different depending on what version of ChromeOS 
+you have. If this problem applies to you, please make an appointment or come 
+by during office hours as soon as possible so we can figure out what the 
+appropriate steps to get everything up and running are.
+:::
+
+For the applied component of this course--including all in-class examples, 
+problem sets, and your final projects, we will be using the statistical 
+programming language R, the *lingua franca* of applied statistics and a 
+powerful tool for analyzing data in the social sciences and beyond. Alongside 
+Python, R is widely used for data analysis in academia, the private sector, 
+and certain government agencies.[^1] The purpose of this guide is to help walk 
+you through the steps necessary to get R installed and configured on your 
+personal computer.
+
+[^1]: Given the growing prevalence of R and other open-source languages in 
+both the public and private sectors, it is somewhat disgraceful that many 
+faculty and departments continue to teach quantitative research methods courses 
+at both the undergraduate and graduate levels around proprietary software such 
+as Stata and SPSS whose use is increasingly rare outside of ever shrinking 
+parts of academia and virtually non-existent in the private sector.
+
+::: callout-warning
+## Alternative Access Options for R and RStudio
+
+I have made arrangements to ensure the latest versions of R, RStudio, and 
+RTools are installed on the computers in the Political Science Lab in Wooten 
+Hall 173. Unfortunately, I cannot guarantee that recent versions of R, 
+RStudio, or RTools are installed or available at other locations on the UNT 
+campus. Note certain features and packages we use in this course may be 
+unavailable under older versions of R or RStudio.
+:::
+
+# Installing the base R Language
+
+The first step in the installation process is to download and install the base language from the [CRAN website](https://www.r-project.org/). The latest 
+version, 4.2.2 (2022-10-31, Innocent and Trusting), can be obtained by clicking 
+the appropriate link for your operating system from those shown below. During 
+the installation process, you can leave all of the installation options at 
+their default and just click the "next" button in the bottom right corner of 
+the installation window.
+
+-   [Windows 8, 10, 11](https://cran.r-project.org/bin/windows/base/R-4.2.2-win.exe)
+
+-   [MacOS 10.13 (High Sierra) or later Intel 64-bit](https://cloud.r-project.org/bin/macosx/base/R-4.2.2.pkg)
+
+-   [MacOS 11 (Big Sur) or later Apple M1/M2](https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.2-arm64.pkg)
+
+::: callout-important
+## XQuartz for MacOS Users
+
+If you downloaded either of the MacOS versions above, you also need to 
+[download and install XQuartz](https://www.xquartz.org/). 
+**This step is only for MacOS users**.
+:::
+
+## Installing and Configuring RStudio
+
+After completing the previous steps, you can now proceed to installing the 
+latest version of [RStudio](https://posit.co/download/rstudio-desktop/), an 
+integrated development environment (IDE) which provides a wide range of 
+features for programming and technical writing in R, Quarto, and numerous 
+other popular languages such as HTML, CSS, C++, Python, Stan, and javascript 
+to name a few. To download the latest version of RStudio, click on the link 
+below that corresponds to your operating system. During the installation 
+process, you can just leave things at their default settings and click 
+through the installation windows.
+
+-   [Download RStudio 2022.12.0+353 for Windows 10/11](https://download1.rstudio.org/electron/windows/RStudio-2022.12.0-353.exe)
+
+-   [Download RStudio 2022.12.0+353 for MacOS 10.15 and higher](https://download1.rstudio.org/electron/macos/RStudio-2022.12.0-353.dmg)
+
+## Customizing and Configuring RStudio
+
+Once you have installed RStudio, you can [customize its appearance and the default behavior of many aspects of your R Sessions](https://support.posit.co/hc/en-us/articles/200549016-Customizing-RStudio). 
+Since some of the customization options covered below require the `{xfun}` 
+package, you should start by executing the code below in the RStudio console 
+before proceeding. Note this also demonstrates one of the ways we can install 
+packages in R.
+
+```{r}
+# Installing the xfun package
+install.packages("xfun")
+```
+
+As shown in figure 1, to customize the behavior and appearance of RStudio we 
+first need to open the global options window by selecting the tools tab from 
+the task bar at the top of the screen.
+
+![Figure 1. Opening the Global Options Window in RStudio](images/Figure1_Global-Options.png){fig-align="center"}
+
+::: a
+Once we've opened the global options window, we can then click on the 
+appearance tab to see the customization options for the general appearance of 
+the RStudio IDE such as those shown in figure 2. RStudio includes several 
+different theme options by default, though you may also 
+[download a wide variety of others depending on your personal tastes](https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai).[^2]
+:::
+
+[^2]: You can download the shipwreck theme [here](https://tmtheme-editor.herokuapp.com/#!/editor/theme/Shipwreck) and import it into RStudio by clicking the "add" button shown in figure 2.
+
+![Figure 2. Changing the Appearance of the RStudio IDE](images/figure2-combined.png){fig-align="center"}
+
+::: a
+In addition to customizing the appearance of RStudio you can also customize its default behavior by selecting the "General" tab as shown below. For the 
+purposes of this course, I recommend setting the default options for your 
+RStudio sessions to those shown in figure 3 and leaving everything else at 
+its default settings.
+:::
+
+![Figure 3. Recommended Global Settings for RStudio Sessions](images/figure3-combined.png){fig-align="center"}
+
+After you have successfully installed the base R language and RStudio, click 
+on the tab corresponding to your operating system in the section below. Note 
+that for more detailed information on the functionality of RStudio, you should 
+also consult the following helpful resource which provides a general overview 
+of the layout of the RStudio IDE.
+
+- [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
+
+You can also consult the educational resources and helpful tutorials for 
+beginners provided by the RStudio Foundation.
+
+- [RStudio Educational Tutorials](https://education.rstudio.com/learn/beginner/)
+
+# R Tools and XCode
+
+::: panel-tabset
+### Windows
+
+::: callout-warning
+## Required Step
+
+You will not be able to successfully complete the steps in the Stan 
+installation tutorial without first installing Rtools. This is a required 
+step for much of the code we will use throughout this course.
+:::
+
+If you are on a Windows operating system, you will need to install [Rtools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) which 
+can download by clicking on the hyperlink below. Rtools is required to 
+install packages from source and, more importantly, anything that requires a 
+C++ compiler, including though not limited to Stan.
+
+-   [Download Rtools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5253-5107-signed.exe)
+
+::: a
+Once again, during the installation process you can just leave things at 
+their default settings, especially in the case of the installation directory 
+since changing its default locations may result in errors during package 
+compilation. After you have completed this step, you will need to install the 
+required packages by running the code below in order to successfully render 
+the Quarto document for problem set 0. **If you encounter errors when rendering the document, please ensure you have these packages installed.**
+:::
+
+```{r}
+# Installing packages required to complete problem set 0
+install.packages(c(
+  "pacman",
+  "remotes",
+  "tidyverse",
+  "data.table",
+  "dtplyr",
+  "downlit",
+  "xml2", 
+  "rmarkdown", 
+  "sessioninfo"
+  ))
+```
+
+::: callout-important
+## Required Package Installations
+
+You must install these packages in order to successfully render the problem set documents for this course.
+:::
+
+::: a
+If you receive an error when attempting to load `{tidyverse}`, it is likely 
+due to a bug in the `{dbplyr}` package--a dependency of `{tidyverse}`--related 
+to a conflict with the CRAN version of `{Brobdingnag}`. To fix this you can 
+run the following code which installs the development version of 
+`{Brobdingnag}` from the package's github repository where the bug has been 
+resolved.
+::: 
+
+::: a
+Once you have successfully completed this step you can proceed to the tutorial for installing and configuring Stan and `{brms}`! For useful resources on getting familiar with R syntax see the resources below. If you encounter issues with any of the above installation steps, please reach out to the teaching assistant or instructor for assistance as soon as possible. **Do not put off getting R, RStudio, and RTools installed and configured since problem set 0 submissions after September 25th will receive a grade of 0. Putting this off until the last possible minute will be detrimental to your grade in this course.**
+:::
+
+### MacOS
+
+::: callout-warning
+## Required Step
+
+You will not be able to successfully complete the steps in the Stan installation tutorial without first installing Xcode. This is a required step for much of the code we will use throughout this course.
+:::
+
+If you are on a MacOS operating system, you will need to install the Xcode developer tools. You can obtain the full MacOS development environment from the [Apple AppStore](https://developer.apple.com/xcode/resources/) using the link below. Xcode is required to install packages from source and, more importantly, anything that requires a C++ compiler, including though not limited to Stan.
+
+-   [Download Xcode from the AppStore](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+
+::: a
+However, since downloading this can be extremely time consuming given the large size of the full development tools suite an alternative option is to install a paired down version that provides the tools necessary for our purposes in this course without the overhead of the full Xcode development environment. You can install the paired down version of Xcode by running the code below in the RStudio console.[^3]
+:::
+
+[^3]: I thank Andrew Heiss for [suggesting this simplified approach](https://twitter.com/andrewheiss/status/1557676974654595072?s=20&t=7TZd-6p2_x7pnIRdZldjkg) to installing Xcode.
+
+```{r}
+## MacOS Users may need to install the rstudioapi manually first
+install.packages("rstudioapi")
+
+## Run the command to install xcode-select
+rstudioapi::terminalExecute(
+  command = "xcode-select --install"
+)
+```
+
+::: callout-note
+If you run into issues installing Xcode using the code above you may need to open RStudio with administrator privileges in order to successfully complete the installation.
+:::
+
+::: a
+Once you have completed this step, you will need to install the required packages by running the code below in order to successfully render the Quarto document for problem set 0. **If you encounter errors when rendering the document, please ensure you have these packages installed.**
+:::
+
+```{r}
+# Installing packages required to complete problem set 0
+install.packages(c(
+  "pacman",
+  "remotes",
+  "tidyverse",
+  "data.table",
+  "dtplyr",
+  "downlit",
+  "xml2", 
+  "rmarkdown", 
+  "sessioninfo"
+  ))
+```
+
+::: callout-important
+## Required Package Installations
+
+You must install these packages in order to successfully render the problem set documents for this course.
+:::
+
+::: a
+If you receive an error when attempting to load `{tidyverse}`, it is likely 
+due to a bug in the `{dbplyr}` package--a dependency of `{tidyverse}`--related 
+to a conflict with the CRAN version of `{Brobdingnag}`. To fix this you can 
+run the following code which installs the development version of 
+`{Brobdingnag}` from the package's github repository where the bug has been 
+resolved.
+::: 
+
+```{r}
+# Installing a package from github using the remotes package
+remotes::install_github("RobinHankin/Brobdingnag")
+```
+
+::: a
+Once you have successfully completed this step you can proceed to the tutorial 
+for installing and configuring Stan and `{brms}`! For useful resources on 
+getting familiar with R syntax see the resources below. If you encounter issues 
+with any of the above installation steps, please reach out to the teaching 
+assistant or instructor for assistance as soon as possible. **Do not put off 
+getting R, RStudio, and Xcode installed and configured since problem set 0 
+submissions after February 10th will receive a grade of 0. Putting this 
+off until the last possible minute will be detrimental to your grade in this 
+course.**
+::: 
+:::
+
+# Additional Installations
+
+For our purposes in this course, I also suggest you install a citation 
+management software--I personally use JabRef since it will export to any 
+citation format in existence--and the latest version of Quarto along with
+git. You can obtain each of these for your operating system by following 
+the links below.
+
+- [JabRef](https://www.jabref.org/#download)
+
+  - Click "Download" and select the appropriate version for your operating 
+  system. We will cover how to configure and use JabRef to organize sources 
+  during the second week of class.
+  
+- [Quarto](https://quarto.org/docs/get-started/)
+
+  - Download and install the appropriate version for your operating system.
+  
+- [git](https://git-scm.com/downloads)
+
+  - If you are on Windows, download and install git. For those on MacOS, you 
+  will prompted to install git automatically upon opening RStudio for the first 
+  time. This will allow you to download and sync [the course's github repository](https://github.com/ajnafa/psci-3300-political-science-research) to 
+  your own computer and ensures your relative file paths are the same as mine, 
+  thus making it easier for me to assist you with any problems. 
+  
+  - Alternatively, just download the repo as a zip file by clicking on the 
+  green “code” tab and choosing “Download ZIP” from the drop down menu 
+  or [you can just click on this direct hyperlink](https://github.com/ajnafa/psci-3300-political-science-research/archive/refs/heads/main.zip). You then need to extract the folder somewhere on 
+  your computer--preferably to a location you will remember since you will be 
+  working in this folder for the rest of the semester.
+  
+  - You can also make a [github account](https://github.com/), but **this step 
+  is mostly optional**. If you are interested in a job in tech, polling, data 
+  analytics, or graduate school in political science it can helpful to have a 
+  public portfolio demonstrating you know things related to the work in those
+  industries and you can list a link to your github on your resume or CV. For a 
+  detailed introduction to git and R with RStudio, see the free online book 
+  [*Happy Git and GitHub for the useR*](https://happygitwithr.com/index.html)
+  
+::: a
+After installing git, you can run the following code from the console within
+RStudio to download the course's github repository
+::: 
+
+```{r, eval=FALSE}
+# Clone the course's github repository to your default directory
+rstudioapi::terminalExecute(
+    command = "git clone https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23.git",
+    workingDir = getwd()
+)
+```
+
+This will allow you to easily download content for the course throughout the 
+semester.
+  
+::: callout-important
+## Required Downloads
+
+**You will have a much more difficult time in this course if you choose not to 
+clone the course repository.** Working in this course folder ensures that 
+your relative file paths are identical to those of the instructor and teaching 
+assistant regardless of which operating system you are using.
+:::
+  
+# Resources for Learning R
+
+- [RStudio Primers](https://rstudio.cloud/learn/primers)
+
+  - A series of interactive tutorials to help you become familiar with the syntax of R and the tidyverse
+  
+- [R for Data Science](https://r4ds.had.co.nz/index.html)
+
+  - An open source online book that provides one of the best introductions to 
+  R and the tidyverse to date. I recommend reading through [the workflow chapters](https://r4ds.had.co.nz/workflow-basics.html) at a minimum since they 
+  are reasonably short and cover important basic guidelines you will need to 
+  know for this course.
+
+  
+# Copyright and License Information
+
+All text and images in this document are made available for public use under a
+[Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+License](https://creativecommons.org/licenses/by-nc/4.0/) while code is provided
+under a [BSD 3-Clause License](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/blob/main/LICENSE).
+All files necessary to reproduce this document are available via [the course's
+github repository](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23).
+    
+# Session Information
+
+```{r, eval=TRUE, echo=FALSE}
+# Print the session information
+sessioninfo::session_info(
+  pkgs = "attached",
+  include_base = TRUE
+)
+```

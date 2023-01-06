@@ -1,0 +1,24 @@
+h1.title {
+  font-size: 100px;
+}
+
+.csl-entry {
+  padding-bottom: 0.5em;
+}
+
+ol.aside-footnotes {
+  padding-top: 3em;
+  font-size: 14pt;
+}
+
+.reveal a {
+    color: #FF355E;
+}
+
+div.cell-output cell-output-stdout {
+  height: 800px;
+}
+
+.reveal pre.sourceCode code {
+    max-height: 800px;
+}
