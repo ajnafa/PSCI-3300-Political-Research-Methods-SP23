@@ -500,11 +500,9 @@ for valid inference.
 
 - Huntington-Klein, Nick. 2022. ["Regression"](https://theeffectbook.net/ch-StatisticalAdjustment.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, pp. 179--266.
 
-- A. Jordan Nafa. 2022. “These Are Not the Effects You Are Looking For: The Fallacy of Mutual Adjustment and How to Avoid It.” [https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation](https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation).
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 9: Simple Normal Regression"](https://www.bayesrulesbook.com/chapter-9.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
 ### Thursday, March 9th, 2023
-
-- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 9: Simple Normal Regression"](https://www.bayesrulesbook.com/chapter-9.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
 - Aronow, Peter M., and Cyrus Samii. 2016. "Does Regression Produce Representative Estimates of Causal Effects?" *American Journal of Political Science* 60(1): 250–267. doi/dataverse: [10.1111/ajps.12185](https://doi.org/10.1111/ajps.12185); [10.7910/DVN/29098](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29098)
 
@@ -530,11 +528,11 @@ relationships and questions of classification that are distinct from regression.
 
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
-- Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. "A Crash Course in Good and Bad Controls." *Sociological Methods \& Research*: 1--34. doi: [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
+- A. Jordan Nafa. 2022. “These Are Not the Effects You Are Looking For: The Fallacy of Mutual Adjustment and How to Avoid It.” [https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation](https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation).
 
 ### Thursday, March 23rd, 2023
 
-- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
+- Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. "A Crash Course in Good and Bad Controls." *Sociological Methods \& Research*: 1--34. doi: [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
 
 - Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be submitted via Canvas no later than Sunday March 26th at 11:59 PM.
 
