@@ -1,7 +1,7 @@
 ---
 title: "PSCI 3300.002 Political Science Research Methods"
 author: "A. Jordan Nafa"
-officehours: "Tues/Wed 10:30 AM to 12:00 PM"
+officehours: "Wed 10:30 AM to 12:00 PM and by Apt."
 office: "Wooten Hall #171"
 classroom: "Peb 219"
 time: "Tues/Thur 12:30-1:50 PM"
@@ -17,7 +17,7 @@ format:
   pdf:
     template: "../assets/templates/syllabus_template.tex"
     highlight-style: haddock
-    keep-tex: true
+    keep-tex: false
     pdf-engine: xelatex
     cite-method: biblatex
     biblio-style: chicago-authordate
@@ -35,7 +35,15 @@ indent: FALSE
 
 # Course Description
 
-\noindent This course serves as an introduction to research methods, causal inference, and applied Bayesian statistics for contemporary political research. Throughout the semester, we will cover formulating research questions, theory development, the logic of causal relationships, and approaches to answering questions about political phenomena. Although there is a modest amount of statistics involved, this is fundamentally an applied course where students will gain experience applying a range of different approaches to analyzing, visualizing, and interpreting data using the open-source statistical programming language R and the tidyverse. In practice, that means less of this 
+\noindent This course serves as an introduction to research methods, causal 
+inference, and applied Bayesian statistics for contemporary political research. 
+Throughout the semester, we will cover formulating research questions, theory 
+development, the logic of causal relationships, and approaches to answering 
+questions about political phenomena. Although there is a modest amount of 
+statistics involved, this is fundamentally an applied course where students 
+will gain experience applying a range of different approaches to analyzing, 
+visualizing, and interpreting data using the open-source statistical 
+programming language R and the tidyverse. In practice, that means less of this 
 
 $$\mathrm{Normal}(y|\mu,\sigma) = \frac{1}{\sqrt{2 \pi}\, \sigma} \exp\left( - \, \frac{1}{2}\left(\frac{y -\mu}{\sigma} \right)^2 \right)$$
 \noindent and more hands-on stuff like this
@@ -47,7 +55,15 @@ std_norm <- rnorm(n = 10e3, mean = 0, sd = 1)
 summary(std_norm)
 ```
 
-Upon completion of this course, students should be able to understand and interpret most research published in political science journals, as well as public opinion polls, surveys, and research findings reported in the news. Students will formulate theoretical arguments and identify their testable implications, evaluate causal claims in principled and logically consistent ways, and provide vague answers to precise research questions. As a result, students who complete this course should be prepared for future coursework in the social sciences, pursuing their own research, and for a life as an educated and informed citizen.
+Upon completion of this course, students should be able to understand and 
+interpret most research published in political science journals, as well as 
+public opinion polls, surveys, and research findings reported in the news. 
+Students will formulate theoretical arguments and identify their testable 
+implications, evaluate causal claims in principled and logically consistent 
+ways, and provide vague answers to precise research questions. As a result, 
+students who complete this course should be prepared for future coursework in 
+the social sciences, pursuing their own research, and for a life as an 
+educated and informed citizen.
 
 # Learning Objectives
 
@@ -315,7 +331,7 @@ calendR::calendR(
 
 # Part I: Fundamentals of Political Research
 
-## Introduction to Empirical Political Research
+## Introduction to Quantitative Political Research
 
 \noindent As a discipline, political science consists of the empirical study 
 of social and political phenomena. Yet, how we ought to study these phenomena 
@@ -323,7 +339,7 @@ is a contested subject with divides between descriptive analyses, causal
 inference, and prediction having long animated the discipline. In the first 
 week of this course, we will begin by considering various approaches to 
 contemporary political inquiry, the questions they are capable of answering, 
-and their various trade-offs.
+and their respective trade-offs.
 
 ### Tuesday, January 17th, 2023
 
@@ -334,6 +350,10 @@ and their various trade-offs.
 ### Thursday, January 19th, 2023
 
 - Samii, Cyrus. 2016. "Causal Empiricism in Quantitative Research." *Journal of Politics* 78(3): 941--955. doi: [10.1086/686690](https://doi.org/10.1086/686690)
+
+- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences in the 2020 Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf) Paper presented at the American Political Science Association’s Annual Meeting in Montreal, Quebec, September 15–18, 2022. github: [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
+
+### Recommended Readings
 
 - Gerring, John. 2012. "Mere Description." *British Journal of Political Science* 42(4): 721--746. doi: [10.1017/S0007123412000130](https://doi.org/10.1017/S0007123412000130)
 
@@ -363,7 +383,7 @@ subject effectively and efficiently using Google Scholar and other resources.
 
 - Geddes, Barbara. 2003. *Paradigms and Sand Castles: Theory Building and Research Design in Comparative Politics*. Ann Arbor: University of Michigan Press, 27--88
 
-## Causal Relationships in the Quantitative Social Sciences
+## Causal Relationships in Political Science
 
 \noindent In quantitative political research we are generally interested in 
 explaining the causes of effects. This week introduces the basic logic of 
@@ -443,7 +463,7 @@ trade-offs between parsimony and precision.
 
 # Part II: Foundations of Quantitative Social Science
 
-## Foundations of Probability and Statistics for Political Research
+## Foundations of Probability and Statistics
 
 \noindent While we introduced the basics of descriptive statistics in prior 
 classes, this week we'll turn our attention to the application of probability 
@@ -483,7 +503,7 @@ principled tool for expressing and quantifying uncertainty.
 
 ### Recommended Readings
 
-- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. *Regression and Other Stories*. Cambridge University Press, pp. 113--182
+- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. *Regression and Other Stories*. Cambridge University Press, 113--182
 
 - Western, Bruce, and Simon Jackman. 1994. "Bayesian Inference for Comparative Research." *American Political Science Review* 88(2): 412–423. doi: [10.2307/2944713](https://doi.org/10.2307/2944713)
 
@@ -498,7 +518,7 @@ for valid inference.
 
 ### Tuesday, March 7th, 2023
 
-- Huntington-Klein, Nick. 2022. ["Regression"](https://theeffectbook.net/ch-StatisticalAdjustment.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, pp. 179--266.
+- Huntington-Klein, Nick. 2022. ["Regression"](https://theeffectbook.net/ch-StatisticalAdjustment.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 179--266.
 
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 9: Simple Normal Regression"](https://www.bayesrulesbook.com/chapter-9.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
@@ -557,7 +577,7 @@ wrong, and the trade-off between internal and external validity.
 
 ### Tuesday, March 28th, 2023
 
-- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. "Causal Inference and Randomized Experiments" in *Regression and Other Stories*. Cambridge University Press, pp. 339--356
+- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. "Causal Inference and Randomized Experiments" in *Regression and Other Stories*. Cambridge University Press, 339--356
 
 - Bos, Angela L., et al. 2022. "This One’s for the Boys: How Gendered Political Socialization Limits Girls’ Political Ambition and Interest." *American Political Science Review* 116(2): 484--501. doi/dataverse: [10.1017/S0003055421001027](https://doi.org/10.1017/S0003055421001027); [10.7910/DVN/YABNFF](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YABNFF)
 
@@ -681,7 +701,7 @@ and sensitivity analysis.
 
 - Nafa, A. Jordan. 2022. “An Introduction to Being Less Wrong: Bayesian Hypothesis Testing and Model Averaged Marginal Effects for the Social Sciences” [https://www.ajordannafa.com/blog/2022/being-less-wrong](https://www.ajordannafa.com/blog/2022/being-less-wrong)
 
-- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences in the 2020 Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf) Paper presented at the American Political Science Association’s Annual Meeting in Montreal, Quebec, September 15–18, 2022. github: [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
+- Plümper, Thomas, and Richard Traunmüller. 2020. “The Sensitivity of Sensitivity Analysis.” Political Science Research and Methods 8(1): 149–59. doi: [10.1017/psrm.2018.30](https://doi.org/10.1017/psrm.2018.30).
 
 ### Thursday, April 27th, 2022
 
@@ -692,8 +712,6 @@ and sensitivity analysis.
 ### Recommended Readings
 
 - Blackwell, Matthew. 2014. “A Selection Bias Approach to Sensitivity Analysis for Causal Effects.” *Political Analysis* 22(2): 169–82. doi: [10.1093/pan/mpt006](https://doi.org/10.1093/pan/mpt006).
-
-- Plümper, Thomas, and Richard Traunmüller. 2020. “The Sensitivity of Sensitivity Analysis.” Political Science Research and Methods 8(1): 149–59. doi: [10.1017/psrm.2018.30](https://doi.org/10.1017/psrm.2018.30).
 
 - Ward, Michael D, Brian D Greenhill, and Kristin M Bakke. 2010. "The Perils of Policy by P-Value: Predicting Civil Conflicts." *Journal of Peace Research* 47(4): 363–75. [10.1177/0022343309356491](https://doi.org/10.1177/0022343309356491).
 
@@ -714,9 +732,6 @@ and sensitivity analysis.
 - Finishing any remaining final research project presentations. See the [final exam schedule](https://registrar.unt.edu/exams/final-exam-schedule/spring) for the meeting time.
 
 - Final research paper is due via Canvas by 11:59PM on Thursday, May 11th, 2023
-
-
-
 
 # Acknowledgments and License Information
 
