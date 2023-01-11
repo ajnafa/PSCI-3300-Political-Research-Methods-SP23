@@ -1,0 +1,30 @@
+---
+title: "Causal Relationships in Political Science"
+format: gfm
+html-math-method: webtex
+---
+
+In quantitative political research we are generally interested in 
+explaining the causes of effects. This week introduces the basic logic of 
+causal relationships, their formal representation through directed acyclic 
+graphs (DAGs), and different types of estimands that aid us in answering our 
+research questions and arriving at valid conclusions in political science.
+
+### Tuesday, January 31st, 2023
+
+- Huntington-Klein, Nick. 2022. ["Describing Relationships"](https://theeffectbook.net/ch-DescribingRelationships.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 46--66
+
+- Rohrer, Julia M. 2018. "Thinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data." *Advances in Methods and Practices in Psychological Science* 1(1): 27--42. doi: [10.1177/2515245917745629](https://doi.org/10.1177/2515245917745629).
+
+### Thursday, February 2nd, 2023
+
+- Huntington-Klein, Nick. 2022. ["Identification"](https://theeffectbook.net/ch-Identification.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 67--85
+
+- Keele, Luke, and William Minozzi. 2013. “How Much Is Minnesota Like Wisconsin? Assumptions and Counterfactuals in Causal Inference with Observational Data.” *Political Analysis* 21(2): 193–216. doi: [10.1093/pan/mps041](https://doi.org/10.1093/pan/mps041).
+
+### Recommended Readings
+
+- Keele, Luke, Randolph T. Stevenson, and Felix Elwert. 2020. “The Causal Interpretation of Estimated Associations in Regression Models.” *Political Science Research and Methods* 8(1): 1-–13. doi: [10.1017/psrm.2019.31](https://doi.org/10.1017/psrm.2019.31)
+
+- Westreich, Daniel, and Sander Greenland. 2013. "The Table 2 Fallacy: Presenting and Interpreting Confounder and Modifier Coefficients." *American Journal of Epidemiology* 177(4): 292-–298. doi: [10.1093/aje/kws412](https://doi.org/10.1093/aje/kws412)
+

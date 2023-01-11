@@ -1,0 +1,29 @@
+---
+title: "Introduction to Quantitative Political Research"
+format: gfm
+html-math-method: webtex
+---
+
+As a discipline, political science consists of the empirical study 
+of social and political phenomena. Yet, how we ought to study these phenomena 
+is a contested subject with divides between descriptive analyses, causal 
+inference, and prediction having long animated the discipline. In the first 
+week of this course, we will begin by considering various approaches to 
+contemporary political inquiry, the questions they are capable of answering, 
+and their respective trade-offs.
+
+### Tuesday, January 17th, 2023
+
+- Course Introduction and Syllabus Overview
+
+- Read through the ["Getting Started with R and Stan"](../00-Getting-Started) module on the course's Canvas page
+
+### Thursday, January 19th, 2023
+
+- Samii, Cyrus. 2016. "Causal Empiricism in Quantitative Research." *Journal of Politics* 78(3): 941--955. doi: [10.1086/686690](https://doi.org/10.1086/686690)
+
+- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences in the 2020 Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf) Paper presented at the American Political Science Association’s Annual Meeting in Montreal, Quebec, September 15–18, 2022. github: [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
+
+### Recommended Readings
+
+- Gerring, John. 2012. "Mere Description." *British Journal of Political Science* 42(4): 721--746. doi: [10.1017/S0007123412000130](https://doi.org/10.1017/S0007123412000130)
