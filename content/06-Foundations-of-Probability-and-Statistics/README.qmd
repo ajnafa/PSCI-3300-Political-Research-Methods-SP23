@@ -1,0 +1,22 @@
+---
+title: "Foundations of Probability and Statistics"
+format: gfm
+html-math-method: webtex
+---
+
+While we introduced the basics of descriptive statistics in prior 
+classes, this week we'll turn our attention to the application of probability 
+theory and statistical reasoning that provide a foundation for the methods 
+covered in the remainder of the course. We'll cover selection bias, the 
+difference between samples and populations, and the basic logic of 
+statistical inference as it relates to contemporary political science.
+
+### Tuesday, February 23rd, 2023
+
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapters 1 and 2"](https://www.bayesrulesbook.com/chapter-1.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
+
+- Huntington-Klein, Nick. 2022. ["Treatment Effects"](https://theeffectbook.net/ch-TreatmentEffects.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 143--159.
+
+### Thursday, February 25th, 2023
+
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 4: Balance and Sequentiality in Bayesian Analyses"](https://www.bayesrulesbook.com/chapter-4.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.

@@ -1,0 +1,28 @@
+---
+title: "Probabilistic Reasoning and Applied Bayesian Inference"
+format: gfm
+html-math-method: webtex
+---
+
+Continuing with our introduction to inferential statistics, this 
+week we dive more concretely into the application of probability theory and 
+Bayesian inference in the contemporary social sciences as a powerful and 
+principled tool for expressing and quantifying uncertainty.
+
+### Tuesday, February 28th, 2023
+
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 6: Approximating the Posterior"](https://www.bayesrulesbook.com/chapter-6.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
+
+- Allen, Michael A., et al. 2020. "Outside the Wire: U.S. Military Deployments and Public Opinion in Host States." *American Political Science Review* 114(2): 326–41. doi: [10.1017/S0003055419000868](https://doi.org/10.1017/S0003055419000868); dataverse: [10.7910/DVN/VCE7KN](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VCE7KN)
+
+### Thursday, March 2nd, 2023
+
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 8: Posterior Inference and Prediction"](https://www.bayesrulesbook.com/chapter-8.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
+
+- Problem Set 2 on Sunday, March 5th, 2023 by 11:59 PM
+
+### Recommended Readings
+
+- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. *Regression and Other Stories*. Cambridge University Press, 113--182
+
+- Western, Bruce, and Simon Jackman. 1994. "Bayesian Inference for Comparative Research." *American Political Science Review* 88(2): 412–423. doi: [10.2307/2944713](https://doi.org/10.2307/2944713)
