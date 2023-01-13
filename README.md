@@ -38,9 +38,9 @@ content or materials in this repository.
 
 ## Licenses
 
-**Text and figures:** All text and images are licensed under Creative
-Commons ([CC-BY-NC
-4.0](https://creativecommons.org/licenses/by-nc/4.0/))
+**Text and figures:** All text and images are licensed under a Creative
+Commons Attribution-ShareAlike 4.0 International ([CC-BY-SA
+4.0](https://creativecommons.org/licenses/by-sa/4.0/)) license.
 
 **Code:** All code is licensed under the [BSD 3-Clause
 License](LICENSE.md).

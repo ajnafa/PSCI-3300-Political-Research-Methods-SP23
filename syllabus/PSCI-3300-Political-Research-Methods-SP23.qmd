@@ -1,7 +1,7 @@
 ---
 title: "PSCI 3300.002 Political Science Research Methods"
 author: "A. Jordan Nafa"
-officehours: "Wed 10:30 AM to 12:00 PM and by Apt."
+officehours: "Tues 10:30 AM--12:00 PM or by Apt."
 office: "Wooten Hall #171"
 classroom: "Peb 219"
 time: "Tues/Thur 12:30-1:50 PM"
@@ -10,7 +10,7 @@ instructor: "A. Jordan Nafa"
 ta: "Sung Min Yun"
 ta-email: "sungminyun@my.unt.edu"
 ta-office: "Wooten Hall #174A"
-ta-hours: "TBD"
+ta-hours: "Wed 1:00--2:30/Thur 2:00--3:30 PM"
 github: "ajnafa/PSCI-3300-Political-Research-Methods-SP23"
 term: "Spring 2023"
 format: 
@@ -518,9 +518,9 @@ for valid inference.
 
 ### Tuesday, March 7th, 2023
 
-- Huntington-Klein, Nick. 2022. ["Regression"](https://theeffectbook.net/ch-StatisticalAdjustment.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 179--266.
-
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 9: Simple Normal Regression"](https://www.bayesrulesbook.com/chapter-9.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
+
+- Huntington-Klein, Nick. 2022. ["Regression"](https://theeffectbook.net/ch-StatisticalAdjustment.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 179--266.
 
 ### Thursday, March 9th, 2023
 
@@ -687,7 +687,7 @@ trends assumption.
 
 - Acharya, Avidit, Matthew Blackwell, and Maya Sen. 2016. "Explaining Causal Findings Without Bias: Detecting and Assessing Direct Effects." *American Political Science Review* 110(3): 512–-29. doi: [10.1017/S0003055416000216](https://doi.org/10.1017/S0003055416000216)
 
-## Prediction and Forecasting for Political Research
+## Advanced Topics in Political Methodology
 
 \noindent We've covered a great deal over the course of the semester, focusing 
 mainly on strategies for causal inference and probabilistic reasoning. To 
