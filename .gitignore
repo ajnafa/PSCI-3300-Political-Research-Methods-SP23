@@ -32,3 +32,12 @@ vignettes/*.pdf
 # Content Folder Files
 content/**/output/.*.rds
 content/**/slides/**/_cache
+content/**/slides/**/.*_files
+
+# Assignments Files
+assignments/**/.*_files
+assignments/**/.*.docx
+
+# Assets files
+assets/references.bib.sav
+assets/references.bib.bak

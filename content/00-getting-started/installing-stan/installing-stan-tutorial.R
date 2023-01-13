@@ -86,7 +86,7 @@ remotes::install_github("stan-dev/cmdstanr")
 # Check that the C++ Toolchain is Configured
 cmdstanr::check_cmdstan_toolchain(fix = TRUE)
 
-# Install cmdstan version 2.30.1
+# Install cmdstan version 2.31
 cmdstanr::install_cmdstan(
   cores = parallel::detectCores(logical = FALSE),
   overwrite = TRUE,
@@ -134,18 +134,21 @@ data("mtcars")
 ## Take the log of horsepower
 mtcars$log_hp <- log(mtcars$hp)
 
-## Specify some weakly informative priors for the model parameters
-mpg_priors <- prior(student_t(10, 20.09, 2), class = Intercept) +
-  prior(normal(0, 9.24), class = b, coef = wt) +
-  prior(normal(0, 12.68), class = b, coef = log_hp) +
-  prior(exponential(1), class = sigma)
+# Specify the formula for the model
+mpg_form <- bf(mpg ~ wt + log_hp)
 
-## Fit the model
+# Specify some weakly informative priors for the model parameters
+mpg_priors <- prior(student_t(10, 19.2, 3), class = Intercept) +
+  prior(normal(0, 9.24), class = b, coef = wt) +
+  prior(normal(0, 19.02), class = b, coef = log_hp) +
+  prior(exponential(0.2), class = sigma)
+
+# Fit the model
 bayes_mpg_fit <- brm(
-  formula = mpg ~ wt + log_hp, # Formula describing the model
+  formula = mpg_form, # Formula describing the model
   family = gaussian(), # Linear regression
+  prior = mpg_priors, # Priors on the parameters
   data = mtcars, # Data for the model
-  prior = mpg_priors,
   cores = parallel::detectCores(logical = FALSE), # Number of cores to use
   chains = 4, # Number of chains, should be at least 4
   iter = 2000, # Total iterations = Warm-Up + Sampling
@@ -153,7 +156,7 @@ bayes_mpg_fit <- brm(
   refresh = 0, # Disable printing progress
   save_pars = save_pars(all = TRUE),
   backend = "cmdstanr", # Requires cmdstanr and cmdstan be installed
-  silent = 2
+  silent = 2 # Set to 0 or 1 to print compiler messages
 )
 
 ## Print a summary of the output
