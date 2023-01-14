@@ -1,4 +1,4 @@
-Prediction and Forecasting for Political Research
+Advanced Topics in Political Methodology
 ================
 
 We’ve covered a great deal over the course of the semester, focusing
@@ -18,7 +18,7 @@ post-stratification, and sensitivity analysis.
 - Plümper, Thomas, and Richard Traunmüller. 2020. “The Sensitivity of
   Sensitivity Analysis.” Political Science Research and Methods 8(1):
   149–59. doi:
-  [10.1017/psrm.2018.30](https://doi.org/10.1017/psrm.2018.30)
+  [10.1017/psrm.2018.30](https://doi.org/10.1017/psrm.2018.30).
 
 ### Thursday, April 27th, 2022
 
@@ -36,9 +36,9 @@ post-stratification, and sensitivity analysis.
 
 - Blackwell, Matthew. 2014. “A Selection Bias Approach to Sensitivity
   Analysis for Causal Effects.” *Political Analysis* 22(2): 169–82. doi:
-  [10.1093/pan/mpt006](https://doi.org/10.1093/pan/mpt006)
+  [10.1093/pan/mpt006](https://doi.org/10.1093/pan/mpt006).
 
 - Ward, Michael D, Brian D Greenhill, and Kristin M Bakke. 2010. “The
   Perils of Policy by P-Value: Predicting Civil Conflicts.” *Journal of
   Peace Research* 47(4): 363–75.
-  [10.1177/0022343309356491](https://doi.org/10.1177/0022343309356491)
+  [10.1177/0022343309356491](https://doi.org/10.1177/0022343309356491).

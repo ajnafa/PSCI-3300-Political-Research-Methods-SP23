@@ -11,7 +11,7 @@ context of both traditional and natural experiments, ways random
 assignment can go wrong, and the trade-off between internal and external
 validity.
 
-### Tuesday, March 28th, 2023
+### Tuesday, April 4th, 2023
 
 - Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. “Causal
   Inference and Randomized Experiments” in *Regression and Other
@@ -24,7 +24,7 @@ validity.
   [10.1017/S0003055421001027](https://doi.org/10.1017/S0003055421001027);
   [10.7910/DVN/YABNFF](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YABNFF)
 
-### Thursday, March 30th, 2023
+### Thursday, April 6th, 2023
 
 - Graham, Matthew H. and Milan W. Svolik. 2020. “Democracy in America?
   Partisanship, Polarization, and the Robustness of Support for
@@ -40,8 +40,6 @@ validity.
   249–-264. doi/dataverse:
   [10.1017/S0003055421000861](https://doi.org/10.1017/S0003055421000861);
   [10.7910/DVN/VHNPUO](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VHNPUO)
-
-- Problem Set 3 is due via Canvas on Sunday, April 2nd, 2023 by 11:59 PM
 
 ### Recommended Readings
 

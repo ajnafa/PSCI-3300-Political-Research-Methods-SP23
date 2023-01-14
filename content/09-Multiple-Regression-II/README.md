@@ -27,7 +27,7 @@ distinct from regression.
   [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
 
 - Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be
-  submitted via Canvas no later than Sunday March 26th at 11:59 PM.
+  submitted via Canvas no later than Monday March 27th at 11:59 PM.
 
 ### Recommended Readings
 

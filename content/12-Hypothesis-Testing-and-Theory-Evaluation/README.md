@@ -10,7 +10,7 @@ testing in political science, the questions it can and cannot answer,
 and alternative approaches that are better suited to answering the
 questions social scientists are interested in.
 
-### Tuesday, April 4th, 2023
+### Tuesday, March 28th, 2023
 
 - Gill, Jeff. 1999. “The Insignificance of Null Hypothesis Significance
   Testing.” *Political Research Quarterly* 52(3): 647–674. doi:
@@ -21,7 +21,7 @@ questions social scientists are interested in.
   Significance.” *American Journal of Political Science* 59(3): 775–788.
   doi: [10.1111/ajps.12149](https://doi.org/10.1111/ajps.12149)
 
-### Thursday, April 6th, 2023
+### Thursday, March 30th, 2023
 
 - Krcmaric, Daniel. 2022. “Does the International Criminal Court Target
   the American Military?” *American Political Science Review*: 1–7.
@@ -33,6 +33,8 @@ questions social scientists are interested in.
   Journal of Political Science*, 58(4): 1083-1091. doi/dataverse:
   [10.1111/ajps.12102](https://doi.org/10.1111/ajps.12102);
   [10.7910/DVN/23818](https://doi.org/10.7910/DVN/23818)
+
+- Problem Set 3 is due via Canvas on Sunday, April 2nd, 2023 by 11:59 PM
 
 ### Recommended Readings
 

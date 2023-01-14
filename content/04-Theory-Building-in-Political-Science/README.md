@@ -40,9 +40,6 @@ explicit connections between research question, theory, and data.
   [10.1177/00031224211004187](https://doi.org/10.1177/00031224211004187);
   [10.7910/DVN/ASGOVU](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ASGOVU)
 
-- Research question assignment is due via Canvas on Sunday, February
-  12th by 11:59 PM.
-
 ### Recommended Readings
 
 - Claassen, Christopher. 2020. “Does Public Support Help Democracy

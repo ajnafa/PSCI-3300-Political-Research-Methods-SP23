@@ -159,8 +159,8 @@ or the [dedicated R discord channel](https://discord.gg/ggm9dnAYBE).
 assigned dates and attend class or view the lecture to understand how the 
 readings from research articles complement material from the textbook. 
 Additional materials may be posted to Canvas as circumstances arise. Grades 
-for the course will be based upon assignments, a research project and 
-presentation, and class participation.
+for the course will be based upon assignments, two exams, and class 
+participation.
 
 In calculating your final grade for this course I use standard mathematical 
 rounding but will otherwise make no further adjustment of grades. Please 
@@ -186,7 +186,7 @@ F: 59.4 or Less
 \noindent To get hands on experience writing R code, manipulating and modeling 
 data, and thinking through the logic of cause and effect, you will complete a 
 series of sets that ask you to apply the topics we cover in class using real 
-or simulated data. These will account for 30\% of your overall grade. Note 
+or simulated data. These will account for 45\% of your overall grade. Note 
 that *you must demonstrate you have made a good faith effort to work through 
 each question in order to receive partial credit for incorrect answers*. 
 Instructions for problem sets 0 through 4 will be posted on the course's 
@@ -201,7 +201,7 @@ below.
 \toprule
 Assignment & Topic & Due Date\\
 \midrule
-Problem Set 0 & Getting Started with R and Markdown & January 29th\\
+Problem Set 0 & Getting Started with R and Stan & January 29th\\
 Problem Set 1 & Data Wrangling and Visualization & February 19th\\
 Problem Set 2 & Probability and Descriptive Statistics & March 5th\\
 Problem Set 3 & Regression and Inferential Statistics & April 2nd\\
@@ -210,47 +210,22 @@ Problem Set 4 & Strategies for Causal Inference & April 23rd\\
 \end{tabular}
 \end{table}
 
-## Final Project
+## Midterm and Final Exams
 
-\noindent The final project for this course requires students to develop a 
-research question relevant to political science or public policy, identify the 
-necessary source(s) of data, and undertake an analysis in R to answer the 
-question using the data and the tools we cover in this course. The final 
-project will consist of two components, a research paper and a final 
-presentation, and will account for 40\% of your overall grade. **This is a 
-group project and you will need to form groups of no more than 2-4 people no 
-later than the due date for the research question assignment.**
-
-- **Research Design** The research paper portion of the final project accounts 
-for 70\% of the final project grade and will be broken down into four separate 
-assignments: a research question and brief overview of the **political science 
-literature** on your topic, a theory outlining the causal relationship of 
-interest, the research design, and a final draft combining each of these. 
-Detailed instructions for each assignment and examples of what the content 
-and structure are expected to resemble will be provided on the course's Canvas 
-page.
-
-- **Final Presentation** The presentation portion accounts for 30\% of your 
-final project grade and requires you to give an 10-12 minute presentation of 
-your research project which should cover your research question, theory, and 
-research design. Examples and templates to assist you with structure and 
-preparation will be provided on the course's Canvas page.
-
-## Midterm Exam
-
-\noindent The midterm exams will be administered online at the time specified 
-in the course schedule section of the syllabus. The midterm exam will account 
-for 20\% of your overall grade in the course.
+\noindent The midterm and final exams will be administered online at the times specified in the course schedule section of the syllabus. The midterm exam will 
+account for 25\% of your overall grade in the course while the final exam will 
+account for 15\%.
 
 - Questions on the exams will be drawn from both the readings and the lectures. 
-Answers should refer to the readings, content, and arguments discussed in class.
+Answers should refer to the readings, content, and arguments discussed in class 
+and be cited appropriately in APSA format.
 
 - Makeup exams will be given only for **documented absences**, with the 
 exception of extended medical problems or family emergencies.
 
 ## Class Participation
 
-\noindent The remaining 10\% of your grade in this course consists of 
+\noindent The remaining 15\% of your grade in this course consists of 
 participation. This means showing up to class, asking relevant questions, 
 and completing occasional in-class activities.
 
@@ -279,56 +254,6 @@ on Sunday, February 12th. Failure to submit certification by this date will
 result in 20-point deduction for each subsequent assignment until certification
 has been submitted and points deducted will not be awarded retroactively.**
 
-# Tentative Course Schedule
-
-```{r calendar, echo=FALSE, fig.height=7, fig.width=9}
-course_dates <- tibble::tibble(
-  date = seq(
-    from = lubridate::ymd("2023-01-01"), 
-    to = lubridate::ymd("2023-05-31"),
-    by = 1
-  ),
-  day = lubridate::wday(date, label = TRUE, abbr = FALSE),
-  class_day = dplyr::case_when(
-    date %in% lubridate::ymd(c(
-      "2023-01-29", 
-      "2023-02-19", 
-      "2023-03-05", 
-      "2023-04-02", 
-      "2023-04-23"
-    )) ~ "Problem Set Due",
-    date == "2023-03-26" ~ "Midterm Due",
-    date %in% lubridate::ymd(c(
-      "2023-02-12",
-      "2023-03-12",
-      "2023-05-11"
-    )) ~ "Research Assignment Due",
-    date %in% lubridate::ymd(c("2023-05-02", "2023-05-04")) ~ "Final Presentations",
-    date %in% lubridate::ymd(c("2023-03-14", "2023-03-16")) ~ "Spring Break",
-    day %in% c("Tuesday", "Thursday") & date > "2023-01-17" & date < "2023-05-4" ~ "Class Day"
-  )
-)
-
-# Creating the calendar
-calendR::calendR(
-  start_date = min(course_dates$date),
-  end_date = max(course_dates$date),
-  start = "M",
-  months.col = "black",
-  special.days = course_dates$class_day,
-  special.col = c("#BFEFFF", "#DBFFD6", "#ECD4FF", "#CCD4FF", "#EBFFD6", "#FFAEB9"),
-  mbg.col = "white",
-  lty = 0,
-  bg.col = "white",
-  low.col = "white",
-  title = "PSCI 3300 Spring 2023 Course Calendar",
-  legend.pos = "bottom",
-  title.size = 30,
-  orientation = "p",
-  font.family = "serif"
-) 
-```
-
 # Part I: Fundamentals of Political Research
 
 ## Introduction to Quantitative Political Research
@@ -345,7 +270,8 @@ and their respective trade-offs.
 
 - Course Introduction and Syllabus Overview
 
-- Read through the "Getting Started with R and Stan" module on the course's Canvas page
+- Read through the "Getting Started with R and Stan" section of the week I 
+module on the course's Canvas page
 
 ### Thursday, January 19th, 2023
 
@@ -430,8 +356,6 @@ explicit connections between research question, theory, and data.
 
 - Lundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. "What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory." *American Sociological Review* 86(3): 532-565. doi/dataverse: [10.1177/00031224211004187](https://doi.org/10.1177/00031224211004187); [10.7910/DVN/ASGOVU](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ASGOVU)
 
-- Research question assignment is due via Canvas on Sunday, February 12th by 11:59 PM.
-
 ### Recommended Readings
 
 - Claassen, Christopher. 2020. "Does Public Support Help Democracy Survive?" *American Journal of Political Science*, 64(1): 118-134. doi/dataverse: [10.1111/ajps.12452](https://doi.org/10.1111/ajps.12452); [10.7910/DVN/HWLW0J](https://doi.org/10.7910/DVN/HWLW0J)
@@ -449,7 +373,8 @@ trade-offs between parsimony and precision.
 
 - Munck, Gerardo L. 2009. *Measuring Democracy: A Bridge between Scholarship and Politics.* Baltimore: The Johns Hopkins University Press, 13--52
 
-- McMann, Kelly et al. 2022. "Assessing Data Quality: An Approach and An Application." *Political Analysis* 30(3): 426–449. doi: [10.1017/pan.2021.27](https://doi.org/10.1017/pan.2021.27)
+- Valgarðsson, Viktor Orri, and Daniel Devine. 2022. "What Satisfaction with 
+Democracy? A Global Analysis of "Satisfaction with Democracy" Measures." *Political Research Quarterly*, 75(3): 576–-590. doi: [10.1177/10659129211009605](https://doi.org/10.1177/10659129211009605)
 
 ### Thursday, February 16th, 2023
 
@@ -458,6 +383,8 @@ trade-offs between parsimony and precision.
 - Problem Set 1 is Due via Canvas by Sunday, February 19th, 2023 at 11:59 PM
 
 ### Recommended Readings
+
+- McMann, Kelly et al. 2022. "Assessing Data Quality: An Approach and An Application." *Political Analysis* 30(3): 426–449. doi: [10.1017/pan.2021.27](https://doi.org/10.1017/pan.2021.27)
 
 - Casper, Gretchen, and Claudiu Tufis. 2003. "Correlation Versus Interchangeability: The Limited Robustness of Empirical Findings on Democracy Using Highly Correlated Data Sets." *Political Analysis* 11(2): 196–203. doi: [10.1093/pan/mpg009](https://doi.org/10.1093/pan/mpg009)
 
@@ -526,8 +453,6 @@ for valid inference.
 
 - Aronow, Peter M., and Cyrus Samii. 2016. "Does Regression Produce Representative Estimates of Causal Effects?" *American Journal of Political Science* 60(1): 250–267. doi/dataverse: [10.1111/ajps.12185](https://doi.org/10.1111/ajps.12185); [10.7910/DVN/29098](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29098)
 
-- Theory assignment is due via Canvas on Sunday, March 12th, 2023 by 11:59 PM
-
 ### Recommended Readings
 
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapters 10-11"](https://www.bayesrulesbook.com/chapter-10.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
@@ -554,7 +479,8 @@ relationships and questions of classification that are distinct from regression.
 
 - Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. "A Crash Course in Good and Bad Controls." *Sociological Methods \& Research*: 1--34. doi: [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
 
-- Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be submitted via Canvas no later than Sunday March 26th at 11:59 PM.
+- Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be 
+submitted via Canvas no later than Monday March 27th at 11:59 PM.
 
 ### Recommended Readings
 
@@ -563,35 +489,6 @@ relationships and questions of classification that are distinct from regression.
 - Clarke, Kevin A., Brenton Kenkel, and Miguel R. Rueda. 2018. "Omitted Variables, Countervailing Effects, and the Possibility of Overadjustment." *Political Science Research and Methods* 6(2): 343--354. doi/dataverse: [10.1017/psrm.2016.46](https://doi.org/10.1017/psrm.2016.46); [10.7910/DVN/BSKHUF](https://doi.org/10.7910/DVN/BSKHUF)
 
 # Part III: Research Design and Causal Inference
-
-## Experimental Designs and Baseline Randomization
-
-\noindent The recognition that baseline random assignment of the treatment is 
-the only way to achieve an unbiased estimate of a causal effect was perhaps 
-one of the most important developments in twentieth century statistics. 
-Although randomized controlled trials (RCT) are often held up as the gold 
-standard for research design, they are not without limitations. This week 
-we'll explore the basic logic of experimental design in the context of 
-both traditional and natural experiments, ways random assignment can go 
-wrong, and the trade-off between internal and external validity.
-
-### Tuesday, March 28th, 2023
-
-- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. "Causal Inference and Randomized Experiments" in *Regression and Other Stories*. Cambridge University Press, 339--356
-
-- Bos, Angela L., et al. 2022. "This One’s for the Boys: How Gendered Political Socialization Limits Girls’ Political Ambition and Interest." *American Political Science Review* 116(2): 484--501. doi/dataverse: [10.1017/S0003055421001027](https://doi.org/10.1017/S0003055421001027); [10.7910/DVN/YABNFF](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YABNFF)
-
-### Thursday, March 30th, 2023
-
-- Graham, Matthew H. and Milan W. Svolik. 2020. "Democracy in America? Partisanship, Polarization, and the Robustness of Support for Democracy in the United States." *American Political Science Review* 114(2): 392--409. doi/dataverse: [10.1017/S0003055420000052](https://doi.org/10.1017/S0003055420000052); [10.7910/DVN/EEARKA](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EEARKA)
-
-- Holman, Mirya R., Jennifer L. Merolla, and Elizabeth J. Zechmeister. 2022. "The Curious Case of Theresa May and the Public That Did Not Rally: Gendered Reactions to Terrorist Attacks Can Cause Slumps Not Bumps." *American Political Science Review* 116(1): 249–-264. doi/dataverse: [10.1017/S0003055421000861](https://doi.org/10.1017/S0003055421000861); [10.7910/DVN/VHNPUO](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VHNPUO)
-
-- Problem Set 3 is due via Canvas on Sunday, April 2nd, 2023 by 11:59 PM
-
-### Recommended Readings
-
-- Muñoz, Jordi, Albert Falcó-Gimeno, and Enrique Hernández. 2020. "Unexpected Event during Survey Design: Promise and Pitfalls for Causal Inference." *Political Analysis* 28(2): 186–-206. doi/dataverse: [10.1017/pan.2019.27](https://doi.org/10.1017/pan.2019.27); [10.7910/DVN/RDIIVL](https://doi.org/10.7910/DVN/RDIIVL)
 
 ## Hypothesis Testing and Theory Evaluation
 
@@ -604,23 +501,52 @@ hypothesis testing in political science, the questions it can and cannot
 answer, and alternative approaches that are better suited to answering the 
 questions social scientists are interested in.
 
-### Tuesday, April 4th, 2023
+### Tuesday, March 28th, 2023
 
 - Gill, Jeff. 1999. "The Insignificance of Null Hypothesis Significance Testing." *Political Research Quarterly* 52(3): 647–674. doi: [10.1177/106591299905200309](https://doi.org/10.1177/106591299905200309)
 
 - Gross, Justin H. 2015. "Testing What Matters (If You Must Test at All): A Context-Driven Approach to Substantive and Statistical Significance." *American Journal of Political Science* 59(3): 775--788. doi: [10.1111/ajps.12149](https://doi.org/10.1111/ajps.12149)
 
-### Thursday, April 6th, 2023
+### Thursday, March 30th, 2023
 
 - Krcmaric, Daniel. 2022. "Does the International Criminal Court Target the American Military?" *American Political Science Review*: 1--7. doi/dataverse: [10.1017/S0003055422000478](https://doi.org/10.1017/S0003055422000478); [10.7910/DVN/HHNZGT](https://doi.org/10.7910/DVN/HHNZGT)
 
 -  Rainey, Carlisle. 2014. "Arguing for a Negligible Effect." *American Journal of Political Science*, 58(4): 1083-1091. doi/dataverse: [10.1111/ajps.12102](https://doi.org/10.1111/ajps.12102); [10.7910/DVN/23818](https://doi.org/10.7910/DVN/23818)
+
+- Problem Set 3 is due via Canvas on Sunday, April 2nd, 2023 by 11:59 PM
 
 ### Recommended Readings
 
 - Gabriel S. Lenz and Alexander Sahn. 2022. "Achieving Statistical Significance with Control Variables and Without Transparency." *Political Analysis* 29 (3): 356--369. doi/dataverse: [10.1017/pan.2020.31](https://doi.org/10.1017/pan.2020.31); [10.7910/DVN/XIEJCR8](https://doi.org/10.7910/DVN/XIEJCR8)
 
 - Bernardi, Fabrizio, Lela Chakhaia and Liliya Leopold. 2017. "‘Sing Me a Song with Social Significance’: The (Mis)Use of Statistical Significance Testing in European Sociological Research." *European Sociological Review* 33(1): 1-15. doi: [10.1093/esr/jcw047](https://doi.org/10.1093/esr/jcw047)
+
+## Experimental Designs and Baseline Randomization
+
+\noindent The recognition that baseline random assignment of the treatment is 
+the only way to achieve an unbiased estimate of a causal effect was perhaps 
+one of the most important developments in twentieth century statistics. 
+Although randomized controlled trials (RCT) are often held up as the gold 
+standard for research design, they are not without limitations. This week 
+we'll explore the basic logic of experimental design in the context of 
+both traditional and natural experiments, ways random assignment can go 
+wrong, and the trade-off between internal and external validity.
+
+### Tuesday, April 4th, 2023
+
+- Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2021. "Causal Inference and Randomized Experiments" in *Regression and Other Stories*. Cambridge University Press, 339--356
+
+- Bos, Angela L., et al. 2022. "This One’s for the Boys: How Gendered Political Socialization Limits Girls’ Political Ambition and Interest." *American Political Science Review* 116(2): 484--501. doi/dataverse: [10.1017/S0003055421001027](https://doi.org/10.1017/S0003055421001027); [10.7910/DVN/YABNFF](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YABNFF)
+
+### Thursday, April 6th, 2023
+
+- Graham, Matthew H. and Milan W. Svolik. 2020. "Democracy in America? Partisanship, Polarization, and the Robustness of Support for Democracy in the United States." *American Political Science Review* 114(2): 392--409. doi/dataverse: [10.1017/S0003055420000052](https://doi.org/10.1017/S0003055420000052); [10.7910/DVN/EEARKA](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EEARKA)
+
+- Holman, Mirya R., Jennifer L. Merolla, and Elizabeth J. Zechmeister. 2022. "The Curious Case of Theresa May and the Public That Did Not Rally: Gendered Reactions to Terrorist Attacks Can Cause Slumps Not Bumps." *American Political Science Review* 116(1): 249–-264. doi/dataverse: [10.1017/S0003055421000861](https://doi.org/10.1017/S0003055421000861); [10.7910/DVN/VHNPUO](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VHNPUO)
+
+### Recommended Readings
+
+- Muñoz, Jordi, Albert Falcó-Gimeno, and Enrique Hernández. 2020. "Unexpected Event during Survey Design: Promise and Pitfalls for Causal Inference." *Political Analysis* 28(2): 186–-206. doi/dataverse: [10.1017/pan.2019.27](https://doi.org/10.1017/pan.2019.27); [10.7910/DVN/RDIIVL](https://doi.org/10.7910/DVN/RDIIVL)
 
 ## Quasi-Experimental Designs I
 
@@ -715,29 +641,63 @@ and sensitivity analysis.
 
 - Ward, Michael D, Brian D Greenhill, and Kristin M Bakke. 2010. "The Perils of Policy by P-Value: Predicting Civil Conflicts." *Journal of Peace Research* 47(4): 363–75. [10.1177/0022343309356491](https://doi.org/10.1177/0022343309356491).
 
-## Research Project Presentations
+## Final Exam
 
 ### Tuesday, May 2nd, 2023
 
-- Final Research Project Presentations
+- Final Exam will open at 8:00 AM on Tuesday, May 2nd, 2023 and must be 
+submitted via Canvas no later than Sunday, May 8th at 11:59 PM.
 
-### Thursday, May 4th, 2023
+# Tentative Course Schedule
 
-- Final Research Project Presentations
+```{r calendar, echo=FALSE, fig.height=7, fig.width=9}
+course_dates <- tibble::tibble(
+  date = seq(
+    from = lubridate::ymd("2023-01-01"), 
+    to = lubridate::ymd("2023-05-31"),
+    by = 1
+  ),
+  day = lubridate::wday(date, label = TRUE, abbr = FALSE),
+  class_day = dplyr::case_when(
+    date %in% lubridate::ymd(c(
+      "2023-01-29", 
+      "2023-02-19", 
+      "2023-03-05", 
+      "2023-04-02", 
+      "2023-04-23"
+    )) ~ "Problem Set Due",
+    date == lubridate::ymd("2023-03-26") ~ "Midterm Due",
+    date == lubridate::ymd("2023-05-08") ~ "Final Exam Due",
+    date %in% lubridate::ymd(c("2023-03-14", "2023-03-16")) ~ "Spring Break",
+    day %in% c("Tuesday", "Thursday") & date > "2023-01-17" & date < "2023-05-4" ~ "Class Day"
+  )
+)
 
-## Finals Week
-
-### Thursday, May 11th, 2023
-
-- Finishing any remaining final research project presentations. See the [final exam schedule](https://registrar.unt.edu/exams/final-exam-schedule/spring) for the meeting time.
-
-- Final research paper is due via Canvas by 11:59PM on Thursday, May 11th, 2023
+# Creating the calendar
+calendR::calendR(
+  start_date = min(course_dates$date),
+  end_date = max(course_dates$date),
+  start = "M",
+  months.col = "black",
+  special.days = course_dates$class_day,
+  special.col = c("#BFEFFF", "#DBFFD6", "#ECD4FF", "#CCD4FF", "#FFAEB9"),
+  mbg.col = "white",
+  lty = 0,
+  bg.col = "white",
+  low.col = "white",
+  title = "PSCI 3300 Spring 2023 Course Calendar",
+  legend.pos = "bottom",
+  title.size = 30,
+  orientation = "p",
+  font.family = "serif"
+) 
+```
 
 # Acknowledgments and License Information
 
-\noindent The content of this class relies in part on materials from courses designed by [Andrew Heiss](https://github.com/andrewheiss/evalsp23.classes.andrewheiss.com), [Matthew Blackwell](https://github.com/mattblackwell/gov2003-f21-site), and [Thomas J. Leeper](https://github.com/leeper/designcourse) and I thank the authors for making their course materials publicly available. Acknowledgment should not be construed as endorsement of any of the content or materials herein. 
+\noindent The content of this class relies in part on materials from courses designed by [Andrew Heiss](https://github.com/andrewheiss/evalsp23.classes.andrewheiss.com/blob/main/LICENSE.md), [Matthew Blackwell](https://github.com/mattblackwell/gov2003-f21-site), and [Thomas J. Leeper](https://github.com/leeper/designcourse) and I thank the authors for making their course materials publicly available. Acknowledgment should not be construed as endorsement of any of the content or materials herein. 
 
-All text and images in this course are made available for public use under a [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License](https://creativecommons.org/licenses/by-nc/4.0/) while R, HTML, and CSS code is provided under a [BSD 3-Clause License](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/blob/main/LICENSE). The files and code necessary to reproduce the content of this course are or will be made available via [the course's github repository](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/) with the exception of those covered by existing commercial copyright restrictions (i.e., copies of the assigned readings for the course).
+All text and images in this course are made available for public use under a [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License](https://creativecommons.org/licenses/by-sa/4.0/) while R, HTML, and CSS code is provided under a [BSD 3-Clause License](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/blob/main/LICENSE). The files and code necessary to reproduce the content of this course are or will be made available via [the course's github repository](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/) with the exception of those covered by existing commercial copyright restrictions (i.e., copies of the assigned readings for the course).
 
 # Course Policies
 

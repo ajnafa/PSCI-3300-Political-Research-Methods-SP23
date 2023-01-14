@@ -14,8 +14,8 @@ trade-offs.
 
 - Course Introduction and Syllabus Overview
 
-- Read through the [“Getting Started with R and
-  Stan”](../00-Getting-Started) module on the course’s Canvas page
+- Read through the “Getting Started with R and Stan” section of the week
+  I module on the course’s Canvas page
 
 ### Thursday, January 19th, 2023
 

@@ -23,8 +23,6 @@ explicit connections between research question, theory, and data.
 
 - Lundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. "What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory." *American Sociological Review* 86(3): 532-565. doi/dataverse: [10.1177/00031224211004187](https://doi.org/10.1177/00031224211004187); [10.7910/DVN/ASGOVU](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ASGOVU)
 
-- Research question assignment is due via Canvas on Sunday, February 12th by 11:59 PM.
-
 ### Recommended Readings
 
 - Claassen, Christopher. 2020. "Does Public Support Help Democracy Survive?" *American Journal of Political Science*, 64(1): 118-134. doi/dataverse: [10.1111/ajps.12452](https://doi.org/10.1111/ajps.12452); [10.7910/DVN/HWLW0J](https://doi.org/10.7910/DVN/HWLW0J)
