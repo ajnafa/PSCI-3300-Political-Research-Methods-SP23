@@ -17,6 +17,14 @@ Google Scholar and other resources.
   *The Effect: An Introduction to Research Design and Causality*. Boca
   Raton, FL: CRC Press, 1–18
 
+- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie
+  Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences
+  in the 2020
+  Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf)
+  Paper presented at the American Political Science Association’s Annual
+  Meeting in Montreal, Quebec, September 15–18, 2022. github:
+  [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
+
 ### Thursday, January 26th, 2023
 
 - Huntington-Klein, Nick. 2022. [“Describing

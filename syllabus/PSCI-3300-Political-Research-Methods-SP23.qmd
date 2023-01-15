@@ -220,8 +220,9 @@ account for 15\%.
 Answers should refer to the readings, content, and arguments discussed in class 
 and be cited appropriately in APSA format.
 
-- Makeup exams will be given only for **documented absences**, with the 
-exception of extended medical problems or family emergencies.
+- Makeup exams will not be allowed with the exception of extended medical 
+problems or family emergencies. In such cases, you must notify the instructor 
+**before the scheduled date of the exam listed on the syllabus**.
 
 ## Class Participation
 
@@ -277,8 +278,6 @@ module on the course's Canvas page
 
 - Samii, Cyrus. 2016. "Causal Empiricism in Quantitative Research." *Journal of Politics* 78(3): 941--955. doi: [10.1086/686690](https://doi.org/10.1086/686690)
 
-- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences in the 2020 Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf) Paper presented at the American Political Science Association’s Annual Meeting in Montreal, Quebec, September 15–18, 2022. github: [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
-
 ### Recommended Readings
 
 - Gerring, John. 2012. "Mere Description." *British Journal of Political Science* 42(4): 721--746. doi: [10.1017/S0007123412000130](https://doi.org/10.1017/S0007123412000130)
@@ -296,6 +295,8 @@ subject effectively and efficiently using Google Scholar and other resources.
 ### Tuesday, January 24th, 2023
 
 - Huntington-Klein, Nick. 2022. ["Research Questions"](https://theeffectbook.net/ch-ResearchQuestions.html) in *The Effect: An Introduction to Research Design and Causality*. Boca Raton, FL: CRC Press, 1--18
+
+- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences in the 2020 Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf) Paper presented at the American Political Science Association’s Annual Meeting in Montreal, Quebec, September 15–18, 2022. github: [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
 
 ### Thursday, January 26th, 2023
 
@@ -453,6 +454,9 @@ for valid inference.
 
 - Aronow, Peter M., and Cyrus Samii. 2016. "Does Regression Produce Representative Estimates of Causal Effects?" *American Journal of Political Science* 60(1): 250–267. doi/dataverse: [10.1111/ajps.12185](https://doi.org/10.1111/ajps.12185); [10.7910/DVN/29098](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29098)
 
+- Midterm Exam will open at 2:00 PM on Tuesday, March 7th and must be 
+submitted via Canvas no later than Sunday March 12th at 11:59 PM.
+
 ### Recommended Readings
 
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapters 10-11"](https://www.bayesrulesbook.com/chapter-10.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
@@ -471,20 +475,17 @@ relationships and questions of classification that are distinct from regression.
 
 ### Tuesday, March 21st, 2023
 
-- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
-
 - A. Jordan Nafa. 2022. “These Are Not the Effects You Are Looking For: The Fallacy of Mutual Adjustment and How to Avoid It.” [https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation](https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation).
-
-### Thursday, March 23rd, 2023
 
 - Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. "A Crash Course in Good and Bad Controls." *Sociological Methods \& Research*: 1--34. doi: [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
 
-- Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be 
-submitted via Canvas no later than Monday March 27th at 11:59 PM.
+### Thursday, March 23rd, 2023
 
-### Recommended Readings
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
 - Mood, Carina. 2010. "Logistic Regression: Why We Cannot Do What We Think We Can Do, and What We Can Do About It." *European Sociological Review* 26(1): 67–82. doi: [10.1093/esr/jcp006](https://doi.org/10.1093/esr/jcp006)
+
+### Recommended Readings
 
 - Clarke, Kevin A., Brenton Kenkel, and Miguel R. Rueda. 2018. "Omitted Variables, Countervailing Effects, and the Possibility of Overadjustment." *Political Science Research and Methods* 6(2): 343--354. doi/dataverse: [10.1017/psrm.2016.46](https://doi.org/10.1017/psrm.2016.46); [10.7910/DVN/BSKHUF](https://doi.org/10.7910/DVN/BSKHUF)
 

@@ -29,6 +29,9 @@ assumptions necessary for valid inference.
   [10.1111/ajps.12185](https://doi.org/10.1111/ajps.12185);
   [10.7910/DVN/29098](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29098)
 
+- Midterm Exam will open at 2:00 PM on Tuesday, March 7th and must be
+  submitted via Canvas no later than Sunday March 12th at 11:59 PM.
+
 ### Recommended Readings
 
 - Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. [“Chapters

@@ -23,14 +23,6 @@ trade-offs.
   *Journal of Politics* 78(3): 941–955. doi:
   [10.1086/686690](https://doi.org/10.1086/686690)
 
-- Nafa, A. Jordan, Meredith Walsh Niezgoda, P. Deanne Roark, and Valerie
-  Martinez-Ebers. [“Stronger Together? Linked Fate and Voter Preferences
-  in the 2020
-  Election.”](https://github.com/ajnafa/linked-fate-paper/raw/main/manuscript/latex/Stronger-Together-Draft-TeX.pdf)
-  Paper presented at the American Political Science Association’s Annual
-  Meeting in Montreal, Quebec, September 15–18, 2022. github:
-  [ajnafa/linked-fate-paper](https://github.com/ajnafa/linked-fate-paper)
-
 ### Recommended Readings
 
 - Gerring, John. 2012. “Mere Description.” *British Journal of Political

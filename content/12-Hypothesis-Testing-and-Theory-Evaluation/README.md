@@ -7,8 +7,8 @@ the field, the most common manifestation, Null Hypothesis Significance
 Testing (NHST), is plagued by logical inconsistencies that remain poorly
 understood. This week we will look at the basic logic of hypothesis
 testing in political science, the questions it can and cannot answer,
-and alternative approaches that are better suited to answering the
-questions social scientists are interested in.
+and approaches that are better suited to providing vague answers to the
+kinds of precise questions social scientists are interested in.
 
 ### Tuesday, March 28th, 2023
 

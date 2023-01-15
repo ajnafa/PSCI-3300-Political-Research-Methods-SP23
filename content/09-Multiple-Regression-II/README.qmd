@@ -12,19 +12,16 @@ relationships and questions of classification that are distinct from regression.
 
 ### Tuesday, March 21st, 2023
 
-- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
-
-- A. Jordan Nafa. 2022. “These Are Not the Effects You Are Looking For: The Fallacy of Mutual Adjustment and How to Avoid It.” [https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation](https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation).
-
-### Thursday, March 23rd, 2023
+-  Nafa, A. Jordan. 2022. “These Are Not the Effects You Are Looking For: The Fallacy of Mutual Adjustment and How to Avoid It.” [https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation](https://www.ajordannafa.com/blog/2022/statistical-adjustment-interpretation).
 
 - Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. "A Crash Course in Good and Bad Controls." *Sociological Methods \& Research*: 1--34. doi: [10.1177/00491241221099552](https://doi.org/10.1177/00491241221099552)
 
-- Midterm Exam will open at 8:00 AM on Wednesday, March 22nd and must be 
-submitted via Canvas no later than Monday March 27th at 11:59 PM.
+### Thursday, March 23rd, 2023
 
-### Recommended Readings
+- Johnson, Alicia A., Miles Q. Ott, Mine Dogucu. 2022. ["Chapter 13: Logistic Regression"](https://www.bayesrulesbook.com/chapter-13.html) in *Bayes Rules! An Introduction to Applied Bayesian Modeling*. Boca Raton, FL: CRC Press.
 
 - Mood, Carina. 2010. "Logistic Regression: Why We Cannot Do What We Think We Can Do, and What We Can Do About It." *European Sociological Review* 26(1): 67–82. doi: [10.1093/esr/jcp006](https://doi.org/10.1093/esr/jcp006)
+
+### Recommended Readings
 
 - Clarke, Kevin A., Brenton Kenkel, and Miguel R. Rueda. 2018. "Omitted Variables, Countervailing Effects, and the Possibility of Overadjustment." *Political Science Research and Methods* 6(2): 343--354. doi/dataverse: [10.1017/psrm.2016.46](https://doi.org/10.1017/psrm.2016.46); [10.7910/DVN/BSKHUF](https://doi.org/10.7910/DVN/BSKHUF)

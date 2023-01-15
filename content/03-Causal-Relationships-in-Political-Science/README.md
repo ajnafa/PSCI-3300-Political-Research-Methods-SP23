@@ -43,3 +43,8 @@ political science.
   Presenting and Interpreting Confounder and Modifier Coefficients.”
   *American Journal of Epidemiology* 177(4): 292-–298. doi:
   [10.1093/aje/kws412](https://doi.org/10.1093/aje/kws412)
+
+- Lundberg, Ian. 2022. “The Gap-Closing Estimand: A Causal Approach to
+  Study Interventions That Close Disparities Across Social Categories.”
+  *Sociological Methods & Research* 0(0): 1-64. doi:
+  [10.1177/00491241211055769](https://doi.org/10.1177/00491241211055769)
