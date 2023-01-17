@@ -1,0 +1,59 @@
+Quasi-Experimental Designs II
+================
+
+The approaches to estimating causal effects we’ve examined thus far rest
+upon the assumption of *strict exogeniety* which tends to fail
+spectacularly in the context of observational data and inhibits our
+ability to make causal claims outside of experimental settings. This
+week we turn our focus to recent developments in political science that
+draw on a set of weaker identifying assumptions known as *sequential
+ignorability* to identify treatment effects and examine causal
+mechanisms. We’ll also cover alternatives to difference in difference
+designs that relax the parallel trends assumption.
+
+### Tuesday, April 18th, 2023
+
+- Kurtz, Marcus J., and Adam Lauretig. 2022. “Does Free-Market Reform
+  Induce Protest? Selection, Post-Treatment Bias, and Depoliticization.”
+  *British Journal of Political Science* 52(2): 968-–976. doi/dataverse:
+  [10.1017/S0007123420000605](https://doi.org/10.1017/S0007123420000605);
+  [10.7910/DVN/WU2WSE](https://doi.org/10.7910/DVN/WU2WSE)
+
+- Ladam, Christina, Jeffrey J. Harden, Jason H. Windett. 2018.
+  “Prominent Role Models: High-Profile Female Politicians and the
+  Emergence of Women as Candidates for Public Office.” *American Journal
+  of Political Science*, 62 (2): 369–381. doi/dataverse:
+  [10.1017/10.1111/ajps.12351](https://doi.org/10.1111/ajps.12351);
+  [10.7910/DVN/D5DEHM](http://doi.org/10.7910/DVN/D5DEHM)
+
+### Thursday, April 20th, 2023
+
+- Pang, Xun, Licheng Liu, and Yiqing Xu. 2022. “A Bayesian Alternative
+  to Synthetic Control for Comparative Case Studies.” Political Analysis
+  30(2): 269–88. doi:
+  [10.1017/pan.2021.22.](https://doi.org/10.1017/pan.2021.22)
+
+- Pinkney, Sean. 2020. “An Improved and Extended Bayesian Synthetic
+  Control.” arXiv: [2103.16244v1](https://arxiv.org/abs/2103.16244)
+
+- Problem Set 4 is due via Canvas on Sunday, April 23rd, 2023 by 11:59
+  PM
+
+### Recommended Readings
+
+- Xu, Yiqing. 2017. “Generalized Synthetic Control Method: Causal
+  Inference with Interactive Fixed Effects Models.” *Political Analysis*
+  25(1): 57–76. doi:
+  [10.1017/pan.2016.2.](https://doi.org/10.1017/pan.2016.2)
+
+- Blackwell, Matthew and Adam Glynn. 2018. “How to Make Causal
+  Inferences with Time-Series Cross-Sectional Data under Selection on
+  Observables.” *American Political Science Review* 112 (4): 1067–1082.
+  doi/dataverse:
+  [10.1017/S0003055418000357](https://doi.org/10.1017/S0003055418000357);
+  [10.7910/DVN/SFBX6Z](https://doi.org/10.7910/DVN/SFBX6Z)
+
+- Acharya, Avidit, Matthew Blackwell, and Maya Sen. 2016. “Explaining
+  Causal Findings Without Bias: Detecting and Assessing Direct Effects.”
+  *American Political Science Review* 110(3): 512–-29. doi:
+  [10.1017/S0003055416000216](https://doi.org/10.1017/S0003055416000216)

@@ -6,7 +6,7 @@ format:
   html:
     theme: "../../../assets/css/lux-modified.scss"
     highlight-style: monokai
-    self-contained: true
+    embed-resources: true
     citations-hover: true
     code-link: true
     code-block-bg: "#272822"
@@ -34,6 +34,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+::: callout-important
+## Important Pre-Requisites
+
+This tutorial assumes you have successfully complete all of the steps for your 
+operating system as outlined in the "Installing and Configuring R and RStudio" 
+RStudio tutorial.
+:::
+
 # Getting Started with Stan
 
 This course is taught from a primarily Bayesian perspective which
@@ -42,7 +50,7 @@ probabilistic reasoning. For much of what we cover in terms of application, we
 will be using the R package [`{brms}`](https://paul-buerkner.github.io/brms/)
 which provides a user-friendly and computationally efficient interface to Stan's
 implementation of dynamic Hamiltonian Monte Carlo, a Markov Chain Monte Carlo
-algorithm [@Buerkner2017; @Buerkner2018; @Carpenter2017; @Hoffman2014]. After
+algorithm [@Burkner2017; @Burkner2018; @Carpenter2017; @Hoffman2014]. After
 you have installed R, Rtools/Xcode, and RStudio as detailed on the "Getting
 Started with R" page, this guide will walk you through the process of installing
 Stan, [`{brms}`](https://paul-buerkner.github.io/brms/), and the necessary
@@ -147,7 +155,7 @@ Once we have installed the necessary packages using the code in the previous
 section, we can install `{rstan}`, the main R interface to Stan, along with the
 required headers for the Stan math library. Since the `{StanHeaders}` package is
 a dependency of `{rstan}`, installing `{rstan}` using the code below will
-install both `{rstan}` and `{StanHeaders}` [@SDT2022; @SDT2022a].
+install both `{rstan}` and `{StanHeaders}` [@StanHeaders2022; @RStan2022].
 
 ```{r}
 # Install the development versions of rstan and StanHeaders
@@ -201,9 +209,9 @@ to the next step.
 ## Installing cmdstanr and cmdstan
 
 The `{brms}` package provides the option to allow you to use `{cmdstanr}`, a
-light-weight alternative to `{rstan}`, as a back-end instead of `{rstan}`
+light-weight interface to CmdStan, as a back-end instead of `{rstan}`
 [@Gabry2022]. This makes it possible to use the latest version of the Stan math
-libraries and cmdstan. Since `{rstan}` development tends to lag behind Stan,
+libraries and CmdStan. Since `{rstan}` development tends to lag behind Stan,
 this will often yield substantial performance gains by allowing you to utilize
 the latest updates to the Stan language and can have the added bonus of being
 more stable on certain operating systems.
@@ -218,6 +226,18 @@ the same approach we used to install `{brms}` in the previous section.
 remotes::install_github("stan-dev/cmdstanr")
 ```
 
+::: callout-important
+If you receive an error while executing the above code in R on Windows, which
+appears to primarily be an issue on computers in Wooten 173, you will need to 
+instead run
+
+```{r}
+# Install cmdstanr from github
+options(download.file.method = "wininet")
+remotes::install_github("stan-dev/cmdstanr")
+```
+:::
+
 Once we have successfully installed `{cmdstanr}`, we can use the
 `check_cmdstan_toolchain` function with the `fix` argument set to `TRUE` to
 check if the C++ toolchain needs to be configured further and if so,
@@ -229,7 +249,7 @@ cmdstanr::check_cmdstan_toolchain(fix = TRUE)
 ```
 
 After verifying the toolchain configuration is correct, we can run the following
-code to download and compile the latest release of cmdstan, which at the time of
+code to download and compile the latest release of CmdStan, which at the time of
 writing this tutorial is version 2.31.
 
 ```{r}
@@ -242,7 +262,7 @@ cmdstanr::install_cmdstan(
 )
 ```
 
-If cmdstan compiles without any errors, you should be able to verify the
+If CmdStan compiles without any errors, you should be able to verify the
 installation and ensure the path directory has been correctly set by running the
 following code.
 
@@ -307,8 +327,8 @@ y_{i} &\sim \mathcal{N(\mu_{i}, \sigma^{2})}\\
 \text{with priors}\\
 \alpha &\sim \mathrm{Student ~T}(10, ~19.2, ~3)\\
 \beta_{1} &\sim \mathrm{Normal}(0, ~9.24)\\
-\beta_{2} &\sim \mathrm{Normal}(0, ~12.68)\\
-\sigma &\sim \mathrm{Exponential}(1)
+\beta_{2} &\sim \mathrm{Normal}(0, ~19.02)\\
+\sigma &\sim \mathrm{Exponential}(0.2)
 \end{align*}
 $$ Don't worry if you do not understand the math expressed here--which I assume
 is the case for most if not all students--as this will all be made much clearer
@@ -325,20 +345,23 @@ data("mtcars")
 ```{r, eval=TRUE, message=FALSE}
 ## Take the log of horsepower
 mtcars$log_hp <- log(mtcars$hp)
-  
-## Specify some weakly informative priors for the model parameters
+
+# Specify the formula for the model
+mpg_form <- bf(mpg ~ wt + log_hp)
+
+# Specify some weakly informative priors for the model parameters
 mpg_priors <- prior(student_t(10, 19.2, 3), class = Intercept) +
   prior(normal(0, 9.24), class = b, coef = wt) +
-  prior(normal(0, 19.02312), class = b, coef = log_hp) +
+  prior(normal(0, 19.02), class = b, coef = log_hp) +
   prior(exponential(0.2), class = sigma)
 
-## Fit the model
+# Fit the model
 bayes_mpg_fit <- brm(
-  formula = mpg ~ wt + log_hp, # Formula describing the model
+  formula = mpg_form, # Formula describing the model
   family = gaussian(), # Linear regression
   prior = mpg_priors, # Priors on the parameters
   data = mtcars, # Data for the model
-  cores = 4, # Number of cores to use for parallel chains
+  cores = parallel::detectCores(logical = FALSE), # Number of cores to use
   chains = 4, # Number of chains, should be at least 4
   iter = 2000, # Total iterations = Warm-Up + Sampling
   warmup = 1000, # Warm-Up Iterations
@@ -358,6 +381,14 @@ about 0.3 seconds and you can obtain a summary of the results using the
 summary(bayes_mpg_fit)
 ```
 
+::: a
+You are almost done! Your next and final step is to proceed to the last 
+tutorial under the Getting Started subsection on Canvas titled 
+"Introduction to Programming in R with RStudio" which will cover the basics 
+of the R language and clarify some of the programming terminology used in this 
+course.
+:::
+
 # Additional Resources for Getting Started with R and Stan
 
 -   [Bayes Rules! An Introduction to Applied Bayesian
@@ -366,6 +397,11 @@ summary(bayes_mpg_fit)
     -   An introductory text to applied Bayesian statistics designed to be
         accessible to undergraduates without a strong background in programming
         or advanced statistics.
+        
+-   [Regression and Other Stories](https://users.aalto.fi/~ave/ROS.pdf)
+
+    -   An introductory text to applied Bayesian statistics, regression, and 
+    causal inference designed for undergraduate and early graduate students.
 
 -   [Stan Discourse Forums](https://discourse.mc-stan.org/)
 
@@ -376,8 +412,8 @@ summary(bayes_mpg_fit)
 # Copyright and License Information
 
 All text and images in this document are made available for public use under a
-[Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-License](https://creativecommons.org/licenses/by-nc/4.0/) while code is provided
+[Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA 4.0)
+License](https://creativecommons.org/licenses/by-sa/4.0/) while code is provided
 under a [BSD 3-Clause License](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23/blob/main/LICENSE).
 All files necessary to reproduce this document are available via [the course's
 github repository](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23).
