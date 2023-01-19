@@ -250,9 +250,8 @@ I require all students complete the [University of Indiana's online tutorial and
 completion of the tutorial, you will take the certification test for 
 undergraduate college students and submit proof of your certification to the
 TA through the assignment on Canvas. **You must successfully complete and 
-submit certification before the due date for the research question assignment 
-on Sunday, February 12th. Failure to submit certification by this date will 
-result in 20-point deduction for each subsequent assignment until certification
+submit certification no later than Sunday, February 19th. Failure to submit certification by this date will 
+result in 15-point deduction for each subsequent assignment until certification
 has been submitted and points deducted will not be awarded retroactively.**
 
 # Part I: Fundamentals of Political Research
