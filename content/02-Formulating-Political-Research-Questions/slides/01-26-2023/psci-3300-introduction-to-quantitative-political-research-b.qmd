@@ -1,0 +1,677 @@
+---
+title: "Research Questions in Quantitative Political Science"
+author: "A. Jordan Nafa"
+date: "January 26, 2023"
+institute: "University of North Texas"
+subtitle: "PSCI 3300.003 Political Science Research Methods"
+format: 
+  revealjs:
+    theme: blood
+    highlight-style: monokai
+    toc-depth: 2
+    embed-resources: true
+    citations-hover: true
+    code-link: true
+    transition: "fade"
+    code-block-bg: "#272822"
+    logo: "../../../../assets/logo/psci-3300-sp23-dag-trimmed-hex.png"
+    css: "../../../../assets/css/slide-style.css"
+    include-in-header: "../../../../assets/math-colors.js"
+editor: visual
+width: 1360
+height: 800
+bibliography: "../../../../assets/references.bib"
+csl: "../../../../assets/apsa.csl"
+link-citations: yes
+---
+
+```{r, include=FALSE}
+## Load required packages
+pacman::p_load("tidyverse", install = FALSE)
+
+## Base theme for the figures
+fig_theme <- theme_light(base_size = 24, base_family = "serif") +
+  ## Settings sepcific to the reveal.js theme
+  theme(
+    strip.background = element_blank(),
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    plot.title = element_text(color = "white"),
+    plot.subtitle = element_text(color = "white"),
+    plot.caption = element_text(color = "white", face = "italic"),
+    axis.text = element_text(color = "white"),
+    axis.title = element_text(color = "white", face = "bold"),
+    legend.title = element_text(color = "white", face = "bold"),
+    legend.text = element_text(color = "white", face = "bold"),
+    strip.text = element_text(face = "bold"),
+    plot.caption.position = "plot",
+    legend.position = "top"
+  )
+```
+
+## How Should we Study Politics? {#sec-introduction}
+
+Political science is a field characterized by a diverse range of approaches to
+inquiry and debates about how we ought to study political phenomena have long
+animated the discipline.
+
+::: incremental
+-   **Normative**
+
+    -   Focused on subjective, moral questions about the world and how things
+        *ought to be*.
+
+-   **Empirical**
+
+    -   Focused on objective explanation and description, questions about how
+        the world *is* and *why.*
+
+<!--# Insert color definitions here to avoid creating a seperate slide for them -->
+
+$$ 
+\definecolor{treatment}{RGB}{255, 53, 94} 
+\definecolor{treat}{RGB}{253, 91, 120} 
+\definecolor{orange}{RGB}{255, 96, 55} 
+\definecolor{confounders}{RGB}{255, 153, 51} 
+\definecolor{lime}{RGB}{204, 255, 0} 
+\definecolor{resp}{RGB}{102, 255, 102} 
+\definecolor{index}{RGB}{170, 240, 209} 
+\definecolor{untreat}{RGB}{80, 191, 230} 
+\definecolor{pink}{RGB}{255, 110, 255} 
+\definecolor{sample}{RGB}{255, 0, 204} 
+\definecolor{operator}{RGB}{255,255,255} 
+$$
+:::
+
+## Normative Approaches
+
+Normative approaches to the study of politics date back thousands of years and
+feature prominently in the sub-field of political philosophy.
+
+::: incremental
+-   How should the world look? Asks for a moral judgement
+
+    -   Who should be responsible for paying for the consequences of climate
+        change?
+
+    -   Should we fire Elon Musk into the Sun?
+
+    -   Should women have autonomy over their reproductive choices?
+
+    -   Is it fair to forgive student loan debt?
+
+-   Normative arguments are common in certain areas of law and philosophy but
+    have no place in this course as they do not lend themselves to scientific
+    answers
+:::
+
+## Empirical Approaches
+
+Empirical approaches are those that aim to apply the scientific method to the
+study of politics and hold a dominant place contemporary political science.
+
+::: incremental
+-   Empirical approaches can be descriptive or causal, quantitative or
+    qualitative, experimental or observational but they all aim to answer some
+    question about *how, what, or why the world is*.
+
+-   **Description** focuses on observing and measuring the state of the world;
+    it aims to answer questions about *who* or *what* in relation to some
+    phenomena [@Gerring2012].
+
+    -   What is democracy and how can we operationalize it?
+
+    -   Who won the 2020 presidential election election?
+:::
+
+--------------------------------------------------------------------------------
+
+### 2020 Presidential Election Vote Totals {.smaller}
+
+```{r, echo=FALSE, dpi=300, dev.args = list(bg = 'transparent'), fig.height=9, fig.width=16, fig.align='center'}
+## 2020 election totals from the federal election commission
+fec_totals <- tribble(
+  ~ candidate, ~ popvote, ~ ecvote, ~ votepct,
+  "Joe Biden", 81268924/1000000, 306, 51.3,
+  "Donald Trump", 74216154/1000000, 232, 46.9
+) %>% 
+  ## Pivot to long form
+  pivot_longer(cols = popvote:ecvote)
+
+## Define labels for the facets
+facet_labs <- as_labeller(
+  x = c(
+    "popvote" = "Popular Vote (in Millions)",
+    "ecvote" = "Electoral College Vote"
+  )
+)
+
+## Make a plot of the results
+ggplot(fec_totals, aes(y = value, x = candidate, fill = candidate)) +
+  ## Facet by popular vote/EC vote
+  facet_wrap(~ name, scales = "free_y", labeller = facet_labs) +
+  ## Bar plot geom
+  geom_bar(stat = "identity", color = "black") +
+  ## Change the colors of the fill
+  scale_fill_manual(values = c("firebrick", "royalblue2")) +
+  ## Adjust the lower bound of the y axis
+  scale_y_continuous(
+    breaks = scales::pretty_breaks(n = 10), 
+    expand = expansion(0.01, 0.01)
+    ) +
+  ## Add labels to the plot
+  labs(
+    fill = "2020 Candidate",
+    x = "",
+    y = "Vote Total",
+    caption = "Source: United States Federal Election Commission, 2020"
+  ) +
+  fig_theme
+```
+
+--------------------------------------------------------------------------------
+
+### Evolution of Liberal Democracy in America {.smaller}
+
+![](images/Figure_2b_Democracy_in_America-02.png){fig-align="center"}
+
+## Empirical Approaches
+
+**Description** has a valuable place in political science and accurate
+description is essential to empirical research.
+
+::: incremental
+-   Descriptive approaches tend to lend themselves to dichotomous answers
+
+    -   Is country $A$ more democratic than country $B$?
+
+    -   Is American democracy in decline?
+
+    -   Did Donald Trump lose the 2020 U.S. presidential election?
+
+-   Yet, it is necessarily inferior to causal approaches because it cannot
+    answer questions of *why* or *how* things happen
+
+-   We'll take a more detailed look at the role of description in quantitative
+    political research when we discuss measurement
+:::
+
+## Empirical Approaches
+
+::: incremental
+-   **Causal** approaches are concerned with explaining *why* some phenomenon
+    occurs in the world [@Samii2016].
+
+-   Contemporary political science is a discipline interested in answering
+    *causal questions*.
+
+    -   Why do poor conservatives tend to vote against their own economic
+        interests?
+
+    -   How do gender-inclusive peace processes influence the risk of conflict
+        recurrence?
+
+    -   How would the world change if we fired Elon Musk into the Sun?
+
+-   Our focus in this class will be primarily on causal questions and entirely
+    on empirical approaches to the study of politics
+:::
+
+## What is Causal Inference?
+
+::: incremental
+-   Does forgiving student loan debt increase inflation?
+
+    -   Imagine student loan debt is forgiven and inflation increases
+
+    -   Would this increase have happened if student loan debt had not been
+        forgiven?
+
+-   How do gender-inclusive peace processes influence the risk of conflict
+    recurrence?
+
+    -   Conflicts that terminate with gender-inclusive peace provisions tend to
+        be less likely to recurr
+
+    -   Would conflict have recurred in the abscence of these gender-inclusive
+        peace provisions?
+
+-   Causal inference is about **counterfactuals**
+:::
+
+## What is Causal Inference?
+
+A **counterfactual** is what would have happened in the absence of some
+intervention.
+
+::: incremental
+-   Imagine a study of $\color{sample} n$ individuals
+
+    -   $\color{sample} n_{\color{treat} 1}$ are assigned some treatment
+
+    -   $\color{sample} n_{\color{untreat} 0}$ do not receive the treatment
+
+-   For each individual
+    $\color{index} i \color{operator}\in \{1, 2, \dots, \color{sample} n \color{operator}\}$
+    we observe the outcome $\color{resp}Y_{\color{index}i}$
+
+-   Treatment status for each individual $\color{index} i$
+    $$\color{treatment} X_{\color{index}i} \color{operator} = \begin{cases}\color{treat} 1 \text{  if treated}\\ \color{untreat} 0 \text{  if not treated}\end{cases}$$
+
+-   Some set of pre-treatment covariates
+    $\color{confounders} Z_{\color{index}i}$
+:::
+
+## What is Causal Inference?
+
+Counterfactuals are questions about the data we do not observe, not the data we
+do.
+
+::: incremental
+-   We want to know the causal effect of $\color{treatment} X_{\color{index} i}$
+    on $\color{resp} Y_{\color{index} i}$
+
+    -   If an individual is <font style="color: #FF5B78">treated</font>,
+        $\color{treatment} X_{\color{index} i} \color{operator} = \color{treat} 1$
+        and we observe some value of $\color{resp} Y_{\color{index} i}$
+
+    -   What value of $\color{resp} Y_{\color{index} i}$ would we have observed
+        if
+        $\color{treatment} X_{\color{index} i} \color{operator} = \color{untreat} 0$
+        instead?
+
+-   **Fundamental Problem of Causal Inference**
+
+    -   For each individual $\color{index} i$ we can only observe
+        $\color{treatment}X_{\color{index} i} \color{operator} = \color{treat}1$
+        or
+        $\color{treatment}X_{\color{index} i} \color{operator} = \color{untreat} 0$
+
+    -   Causal inference is a missing data problem
+
+-   How do we overcome this problem?
+
+    -   We make assumptions to bridge these parallel worlds
+:::
+
+## Firing Billionaires into the Sun
+
+Imagine we are interested in whether firing billionaires into the Sun might
+cause some meaningful improvement in the world.
+
+::: incremental
+-   A study of $\color{sample} n$ billionaires
+
+-   For each billionaire
+    $\color{index} i \color{operator}\in \{1, 2, \dots, \color{sample} n \color{operator}\}$
+    we observe the state of the world $\color{resp}Y_{\color{index}i}$ before
+    and after they are assigned to either the treatment or control group
+
+-   Treatment status for each billionaire $\color{index} i$
+    $$\color{treatment} X_{\color{index}i} \color{operator} = \begin{cases}\color{treat} 1 \text{  if fired into the Sun}\\ \color{untreat} 0 \text{  if not fired into the Sun}\end{cases}$$
+
+-   Some set of pre-treatment covariates
+    $\color{confounders} Z_{\color{index}i}$
+:::
+
+## Firing Billionaires into the Sun
+
+::: incremental
+-   The causal effect of firing a billionaire into the Sun is
+
+    -   $\color{resp}Y_{\color{index}i}\color{treat}(\text{Fired into the Sun})\color{operator} - \color{resp}Y_{\color{index}i}\color{untreat}(\text{Not fired into the Sun})$
+
+-   For each billionaire $\color{index} i$ we can either
+    <font style="color: #FF5B78">fire them into the Sun</font> or
+    <font style="color: #50BFE6">not fire them into the Sun</font>, but it is
+    impossible do both
+
+    -   This is the **fundamental problem of causal inference**
+
+-   Also illustrates some practical limitations
+
+    -   No IRB would ever approve this study and billionaires are a hard to
+        sample population 😭
+
+    -   [It is really, really hard to fire subjects into the
+        Sun](https://www.forbes.com/sites/startswithabang/2019/09/20/this-is-why-we-dont-shoot-earths-garbage-into-the-sun/?sh=1af1b4115d63)
+
+    -   More efficient to eject them out of the Solar system with a gravity
+        assist from Jupiter instead
+:::
+
+## What Causal Inference is Not
+
+![](../../../../assets/dank-memes/causal-pidgeon-impact-correlation.jpg){fig-align="center"}
+
+## What Causal Inference is Not
+
+![](../../../../assets/dank-memes/causal-pidgeon-regression-impact.jpg){fig-align="center"}
+
+## What Causal Inference is Not
+
+![](../../../../assets/dank-memes/causal-pidgeon-impact-or.jpg){fig-align="center"}
+
+## What Causal Inference is Not
+
+::: incremental
+-   Descriptions of how the world is, correlations, joint distributions,
+    predictions, regression coefficients, odds ratios, probabilities, etc.
+
+    -   All of these things may be useful and some may have causal
+        interpretations under specific circumstances
+
+    -   They do not, however, in and of themselves capture causal relationships
+        without additional assumptions
+
+-   A **causal effect** is the change we would observe if we manipulated some
+    feature of the world while holding all else constant
+
+    -   Sometimes we do not know because we cannot know--**there is no magic**
+:::
+
+## Why Causal Inference?
+
+As it turns out, causal inference is really, really hard so why bother at all?
+
+::: incremental
+-   We could just make some claims and use a bunch of weasel words to avoid
+    saying "cause" and "effect" while still heavily implying causality, right?
+
+    -   "$\color{treatment}X$ explains $\color{resp}Y$"
+
+    -   "$\color{treatment}X$ has an impact on $\color{resp}Y$"
+
+    -   "People who do $\color{treatment}X$ are more likely to experience
+        $\color{resp}Y$"
+
+-   Lots of people still do this!
+
+    -   Makes it hard to distinguish between what is real and what is not,
+        results in the proliferation of *pseudo-facts* [@Samii2016]
+
+    -   Important to be explicit about our assumptions, intentions, and goals
+:::
+
+## Key Takeaways
+
+::: incremental
+-   Difference between **normative** and **empirical** approaches in political
+    science
+
+    -   Distinction between **descriptive questions** and **causal questions**
+
+-   **Counterfactuals** and the **Fundamental Problem of Causal Inference**
+
+-   What causal inference is and what it is not
+
+-   We will spend the rest of the semester building on this foundation
+:::
+
+## Getting Started with R and RStudio
+
+::: incremental
+-   Read the installation instructions on Canvas under the module for Week I
+
+-   Easiest way to avoid headaches involving file paths is for you to download
+    the [course's repository from
+    github](https://github.com/ajnafa/psci-3300-political-science-research)
+
+    -   Either download a zip file of the current version and extract that
+        somewhere on your computer
+
+    -   Or you can install [git](https://git-scm.com/downloads) which integrates
+        with RStudio
+
+        -   [Happy Git and GitHub for the
+            useR](https://happygitwithr.com/index.html) is a free online book on
+            getting started with git in RStudio
+
+        -   This approach let's you pull updates from the course repo directly
+            from RStudio
+
+-   This will ensure your relative file paths match mine and will make it easier
+    for me to help you
+:::
+
+## Workflow Basics
+
+::: incremental
+-   Project-Oriented Workflow
+
+    -   Work in [RStudio
+        projects](https://r4ds.had.co.nz/workflow-projects.html)
+
+        -   Helps you keep things organized in appropriate subfolders
+
+        -   All file paths are <font style="color: #00F5FF">**relative**</font>
+            to the .Rproj file's location
+
+    -   Write code in scripts
+
+        -   Helps you keep track of and structure your data, analysis, etc.
+
+        -   Comment your code
+
+        -   Use seperate scripts for each part of your analysis, problem sets,
+            etc.
+
+-   We'll talk more about [Quarto](https://quarto.org/docs/guide/) and
+    dynamically reproducible documents next week
+:::
+
+## Scripts in R
+
+It is generally considered good practice to load the packages you use in a
+script and set any global options for the R session at the top of the script.
+
+```{r, echo=TRUE, eval=FALSE}
+#---------------------R for Political Research: Lesson I-----------------------
+#-Author: A. Jordan Nafa-----------------------------Created: August 19, 2022-#
+#-R Version: 4.2.1-----------------------------------Revised: August 28, 2022-#
+
+# Set Session Options, you could also declare these in a .Rprofile
+options(
+  digits = 4, # Significant figures output
+  scipen = 999, # Disable scientific notation
+  repos = getOption("repos")["CRAN"] # repo to install packages from
+)
+
+# Load Required Libraries, run install.packages("pacman") first
+pacman::p_load(
+  "tidyverse", # Suite of packages for tidy data management 
+  "data.table", # Package for high-performance data management 
+  "dtplyr", # Package to interface between dplyr and data.table
+  install = FALSE # Set this to TRUE to install missing packages
+)
+```
+
+Since code is executed sequentially, this ensures any dependencies required for
+later code chunks have already been loaded prior to their execution.
+
+## Basic Calculations in R {auto-animate="true"}
+
+In the simplest illustration, we can use R for both basic calculations like
+addition, subtraction, multiplication, and division
+
+``` r
+# Using R for Addition
+print(2 + 2)
+
+# We can also find the sum of a sequence of numbers
+sum(2, 4, 6)
+```
+
+## Basic Calculations in R {auto-animate="true"}
+
+In the simplest illustration, we can use R for both basic calculations like
+addition, subtraction, multiplication, and division
+
+``` r
+# Using R for Addition
+print(2 + 2)
+
+# We can also find the sum of a sequence of numbers
+sum(2, 4, 6)
+
+# Using R for Subtraction
+print(6 - 2)
+```
+
+## Basic Calculations in R {auto-animate="true"}
+
+In the simplest illustration, we can use R for both basic calculations like
+addition, subtraction, multiplication, and division
+
+``` r
+# Using R for Addition
+print(2 + 2)
+
+# We can also find the sum of a sequence of numbers
+sum(2, 4, 6)
+
+# Using R for Subtraction
+print(6 - 2)
+
+# Using R for Multiplication
+print(9 * 12)
+
+# We can also find the product of a sequence of numbers
+prod(9, 12, 36)
+```
+
+## Basic Calculations in R {auto-animate="true"}
+
+In the simplest illustration, we can use R for both basic calculations like
+addition, subtraction, multiplication, and division
+
+``` r
+# Using R for Addition
+print(2 + 2)
+
+# We can also find the sum of a sequence of numbers
+sum(2, 4, 6)
+
+# Using R for Subtraction
+print(6 - 2)
+
+# Using R for Multiplication
+print(9 * 12)
+
+# We can also find the product of a sequence of numbers
+prod(9, 12, 36)
+
+# Using R for Division
+print(4 / 2)
+```
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+-   Useful for understanding the concept of **assignment**, or how we specify
+    certain objects in memory so we can use them elsewhere in a session
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+-   Useful for understanding the concept of **assignment**, or how we specify
+    certain objects in memory so we can use them elsewhere in a session
+
+```{r, echo=TRUE}
+# This just prints the square root of 30
+sqrt(26 + 4)
+```
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+-   Useful for understanding the concept of **assignment**, or how we specify
+    certain objects in memory so we can use them elsewhere in a session
+
+```{r, echo=TRUE}
+# This just prints the square root of 30
+sqrt(26 + 4)
+
+# We don't get any output for this one though. Why?
+sqrt_30 <- sqrt(26 + 4)
+```
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+-   Useful for understanding the concept of **assignment**, or how we specify
+    certain objects in memory so we can use them elsewhere in a session
+
+```{r, echo=TRUE}
+# This just prints the square root of 30
+sqrt(26 + 4)
+
+# We don't get any output for this one though. Why?
+sqrt_30 <- sqrt(26 + 4)
+```
+
+-   There is nothing returned for the second operation because we assigned it to
+    an object in memory called `sqrt_30` using `<-`, the **assignment operator**
+
+## Objects and Assignment
+
+R is what is known as an [object oriented programming language
+(OOP)](https://adv-r.hadley.nz/oo.html), meaning that everything in R is an
+**object**
+
+-   Useful for understanding the concept of **assignment**, or how we specify
+    certain objects in memory so we can use them elsewhere in a session
+
+```{r, echo=TRUE}
+# This just prints the square root of 30
+sqrt(26 + 4)
+
+# We don't get any output for this one though. Why?
+sqrt_30 <- sqrt(26 + 4)
+```
+
+-   There is nothing returned for the second operation because we assigned it to
+    an object in memory called `sqrt_30` using `<-`, the **assignment operator**
+
+```{r, echo=TRUE}
+# We can get the contents of sqrt_30 using print()
+print(sqrt_30)
+```
+
+## Licensing and Copyright Information
+
+-   All text and images in this course are made available for public
+    non-commercial use under a [Creative Commons Attribution-NonCommercial 4.0
+    International (CC BY-NC 4.0)
+    License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+-   All R, HTML, and CSS code is provided for public use under a [BSD 3-Clause
+    License](https://github.com/ajnafa/psci-3300-political-science-research/blob/main/LICENSE).
+
+-   The files and code necessary to reproduce the content of this course are or
+    will be made available via [the course's github
+    repository](https://github.com/ajnafa/psci-3300-political-science-research)
+    with the exception of those covered by existing commercial copyright
+    restrictions (i.e., copies of the assigned readings for the course).
+
+## References
