@@ -187,7 +187,7 @@ can download by clicking on the hyperlink below. Rtools is required to
 install packages from source and, more importantly, anything that requires a 
 C++ compiler, including though not limited to Stan.
 
--   [Download Rtools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5253-5107-signed.exe)
+-   [Download Rtools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe)
 
 ::: a
 Once again, during the installation process you can just leave things at 
@@ -361,15 +361,9 @@ the links below.
 
   - If you are on Windows, download and install git. For those on MacOS, you 
   will prompted to install git automatically upon opening RStudio for the first 
-  time. This will allow you to download and sync [the course's github repository](https://github.com/ajnafa/psci-3300-political-science-research) to 
+  time. This will allow you to download and sync [the course's github repository](https://github.com/ajnafa/PSCI-3300-Political-Research-Methods-SP23) to 
   your own computer and ensures your relative file paths are the same as mine, 
-  thus making it easier for me to assist you with any problems. 
-  
-  - Alternatively, just download the repo as a zip file by clicking on the 
-  green “code” tab and choosing “Download ZIP” from the drop down menu 
-  or [you can just click on this direct hyperlink](https://github.com/ajnafa/psci-3300-political-science-research/archive/refs/heads/main.zip). You then need to extract the folder somewhere on 
-  your computer--preferably to a location you will remember since you will be 
-  working in this folder for the rest of the semester.
+  thus making it easier for me to assist you with any problems.
   
   - You can also make a [github account](https://github.com/), but **this step 
   is mostly optional**. If you are interested in a job in tech, polling, data 
