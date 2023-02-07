@@ -221,8 +221,8 @@ summary(std_norm)
 -   The midterm and final exams will be administered online at the times specified in the course schedule section of the syllabus.
 
     -   The midterm exam will account for 25% of your grade while the final accounts for 15%
-    
-    - Questions on the exams will be drawn from both the readings and the lectures.
+
+    -   Questions on the exams will be drawn from both the readings and the lectures.
 :::
 
 ## Course Participation
