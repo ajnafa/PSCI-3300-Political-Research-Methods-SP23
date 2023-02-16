@@ -31,7 +31,7 @@ data(vdem, package = "vdemdata")
 gender_data <- vdem %>% 
   # Use just the year 2018
   filter(year == 2018) %>%  
-  # Transmute a subset of the data for plotting
+  # Select a subset of the data for plotting
   select(
     country_name,
     v2x_polyarchy, 
