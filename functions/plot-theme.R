@@ -16,7 +16,7 @@ plot_theme <- function(base_size = 12,
                        legend_text_size = NULL,
                        subtitle_size = NULL,
                        caption_size = NULL,
-                       show.axis == TRUE,
+                       show.axis = TRUE,
                        ...) {
   
   # Base Theme Settings
